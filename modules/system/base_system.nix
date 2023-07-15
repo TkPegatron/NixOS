@@ -1,7 +1,7 @@
 { config, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         { #--{Locale Configuration}------------#
-            time.timezone = "America/Detroit";
+            time.timeZone = "America/Detroit";
             i18n.defaultLocale = "en_US.UTF-8";
             console = {
                 keyMap = "us";
