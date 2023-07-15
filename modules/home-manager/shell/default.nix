@@ -3,7 +3,7 @@ with lib;
 let cfg = config.modules.shell;
 in {
     options.modules.shell = { enable = mkEnableOption "shell"; };
-    config = mkIf cfg.enable (mkMerge [
+    config = mkIf cfg.enable (lib.mkMerge [
         { #--{Shell Related Packages}--------#
             programs = {
                 home-manager.enable = true;

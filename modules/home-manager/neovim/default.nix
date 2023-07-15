@@ -3,7 +3,7 @@ with lib;
 let cfg = config.modules.neovim;
 in {
     options.modules.neovim = { enable = mkEnableOption "neovim"; };
-    config = mkIf cfg.enable (mkMerge [
+    config = mkIf cfg.enable (lib.mkMerge [
         { #--{Neovim Configuration}---------------------#
             home.packages = with pkgs; [ neovim ];
             home.sessionVariables = {

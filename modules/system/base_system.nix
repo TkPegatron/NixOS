@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }: {
-    config = mkMerge ([
+    config = lib.mkMerge ([
         { #--{Locale Configuration}------------#
             time.timezone = "America/Detroit";
             i18n.defaultLocale = "en_US.UTF-8";
