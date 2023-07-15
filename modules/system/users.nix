@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, lib, inputs, ... }:
 with lib;
 let
   groupExists = grp: builtins.hasAttr grp config.users.groups;
