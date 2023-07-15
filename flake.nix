@@ -56,7 +56,6 @@
                                 useGlobalPkgs = true;
                                 extraSpecialArgs = { 
                                     inherit inputs;
-                                    inherit self;
                                 };
                             };
                             nixpkgs.overlays = [
