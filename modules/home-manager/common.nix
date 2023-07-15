@@ -11,4 +11,5 @@
         shell.enable = true;
         neovim.enable = true;
     };
+    config.home.stateVersion = "23.05";
 }
