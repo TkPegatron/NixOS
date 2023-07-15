@@ -8,6 +8,12 @@
     boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [ ];
 
+    boot.loader = {
+        plymouth.enable = true;
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+    };
+
     boot.initrd.luks.devices = {
         "nixos-system".device = "/dev/disk/by-uuid/51f154bc-185b-404b-a5c0-7db68c33b006";
     };
