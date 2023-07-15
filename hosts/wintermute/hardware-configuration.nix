@@ -49,7 +49,7 @@
 
     fileSystems."/boot" = {
         fsType = "vfat";
-        device = "/dev/disk/by-uuid/AB89-8670";
+        device = "/dev/disk/by-uuid/DD42-DE5E";
     };
 
     system.stateVersion = "23.05";
