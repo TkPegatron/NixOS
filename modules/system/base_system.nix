@@ -100,7 +100,7 @@
                 # Put swap on compressed tmpfs
                 enable = true;
                 algorithm = "zstd";
-            }
+            };
         }
         { #--{Virtualization Configuration}----#
             virtualisation.podman = {
