@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         { #--{Locale Configuration}------------#
             time.timezone = "America/Detroit";
