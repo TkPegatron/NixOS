@@ -28,7 +28,6 @@
                 dev.enable = false;
             };
             nix = {
-                useSandbox = true;
                 extraOptions = ''
                     warn-dirty = false
                     keep-outputs = true
@@ -179,7 +178,7 @@
                 openssh = {
                     enable = true;
                     settings = {
-                        PermitRootLogin = lib.mkforce "no";
+                        PermitRootLogin = lib.mkForce "no";
                         PasswordAuthentication = lib.mkForce false;
                         KbdInteractiveAuthentication = false;
                     };
