@@ -43,7 +43,7 @@
                 };
                 optimise = {
                     automatic = true;
-                    dates = "weekly";
+                    dates = [ "weekly" ];
                 };
                 settings = {
                     log-lines = 20;
