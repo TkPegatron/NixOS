@@ -53,5 +53,5 @@
         device = "/dev/disk/by-uuid/5E78-CDB9";
     };
 
-    system.stateVersion = "23.05"
+    system.stateVersion = "23.05";
 }
