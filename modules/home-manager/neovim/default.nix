@@ -7,13 +7,13 @@ in {
         { #--{Neovim Configuration}---------------------#
             home.packages = with pkgs; [ neovim ];
             home.sessionVariables = {
-                EDITOR = "nvim";
-                VISUAL = "nvim";
+                EDITOR = "${pkgs.neovim}/bin/nvim";
+                VISUAL = "${pkgs.neovim}/bin/nvim";
             };
             programs.zsh.shellAliases = { 
-                nano = "nvim";
-                vim = "nvim";
-                vi = "nvim";
+                nano = "${pkgs.neovim}/bin/nvim";
+                vim = "${pkgs.neovim}/bin/nvim";
+                vi = "${pkgs.neovim}/bin/nvim";
             };
         }
     ]);
