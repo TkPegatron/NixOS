@@ -34,12 +34,19 @@ in {
             home.sessionVariables = {
                 LANG = "en_US.UTF-8";
             };
+            home.sessionPath = {
+                "${config.home.homeDirectory}/.local/bin"
+            }
         }
         { #--{XDG Enforcement}---------------#
             xdg = {
                 enable = true;
                 userDirs = {
                     desktop = "$HOME/.desktop";
+                    documents = "${config.home.homeDirectory}/Documents";
+                    music = "${config.home.homeDirectory}/Music";
+                    pictures = "${config.home.homeDirectory}/Pictures";
+                    videos = "${config.home.homeDirectory}/Videos";
                 };
                 configFile = {
                     "starship.toml".text = builtins.readFile ./config/starship.toml;
@@ -53,7 +60,7 @@ in {
                 zsh = {
                     enable = true;
                     autocd = true;
-                    dotDir = ".config/zsh";
+                    dotDir = "${config.xdg.configHome}/zsh";
                     enableAutosuggestions = true;
                     history = {
                         size = 500000;
@@ -62,7 +69,7 @@ in {
                         ignoreSpace = true;
                         ignoreDups = true;
                         share = true;
-                        path = ".config/zsh/zsh_history";
+                        path = "${config.xdg.configHome}/zsh/zsh_history";
                     };
                     envExtra = ''
                         ZSH_SELF_EXAPWD=true
