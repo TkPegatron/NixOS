@@ -16,7 +16,8 @@
         { #--{GPG User-Specific Config}---------------------#
             modules.gpg.enable = true;
             programs.gpg.publicKeys.elliana = {
-                text = builtins.readFile /gpg/elliana.pub;
+                trust = "ultimate";
+                text = builtins.readFile ./gpg/elliana.pub;
             };
             services.gpg-agent.sshKeys = [
                 "ED2EDC2C8563ABB9404C5877DB56182523676CD1"
