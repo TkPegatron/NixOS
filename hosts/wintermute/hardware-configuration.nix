@@ -50,7 +50,7 @@
 
     fileSystems."/boot" = {
         fsType = "vfat";
-        device = "/dev/disk/by-uuid/DD42-DE5E";
+        device = "/dev/disk/by-uuid/4292-E521";
     };
 
     # Do not use swap device
