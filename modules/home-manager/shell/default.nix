@@ -34,9 +34,9 @@ in {
             home.sessionVariables = {
                 LANG = "en_US.UTF-8";
             };
-            home.sessionPath = {
+            home.sessionPath = [
                 "${config.home.homeDirectory}/.local/bin"
-            };
+            ];
         }
         { #--{XDG Enforcement}---------------#
             xdg = {
@@ -54,7 +54,7 @@ in {
             programs.starship.enable = true;
             xdg.configFile = {
                 "starship.toml".text = builtins.readFile ./config/starship.toml;
-            }
+            };
         }
         { #--{ZShell Configuration}----------#
             programs= {
