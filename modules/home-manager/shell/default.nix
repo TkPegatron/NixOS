@@ -1,12 +1,30 @@
 { pkgs, lib, config, ... }:
 with lib;
-let cfg = config.modules.shell;
+let 
+    cfg = config.modules.shell;
+
+    sudoAliases = {
+        sodu  = "sudo env PATH=$PATH "; # Sudo is cruise control for cool
+        sodo  = "sudo env PATH=$PATH "; # Preserve PATH and aliases
+        sdoo  = "sudo env PATH=$PATH "; # Preserve PATH and aliases
+        sudu  = "sudo env PATH=$PATH "; # Preserve PATH and aliases
+        sduo  = "sudo env PATH=$PATH "; # Preserve PATH and aliases
+        sudo  = "sudo env PATH=$PATH "; # Preserve PATH and aliases
+    };
+
+    generalAliases = {
+        cat   = "bat -Pp";              # Use bat instead of cat
+        ip    = "ip --color=auto";      # Color IP command
+        mkdir = "mkdir -pv";            # Always create directory trees
+    };
+
 in {
     options.modules.shell = { enable = mkEnableOption "shell"; };
     config = mkIf cfg.enable (lib.mkMerge [
         { #--{Shell Related Packages}--------#
             home.packages = with pkgs; [
-                skim fd perl
+                skim fd perl ripgrep-all
+                bottom
             ];
             programs = {
                 home-manager.enable = true;
@@ -33,6 +51,8 @@ in {
         { #--{Session Environment}-----------#
             home.sessionVariables = {
                 LANG = "en_US.UTF-8";
+                PAGER = "less -FirSwX";
+                MANPAGER = "sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'";
             };
             home.sessionPath = [
                 "${config.home.homeDirectory}/.local/bin"
@@ -74,6 +94,7 @@ in {
                         share = true;
                         path = "${config.xdg.dataHome}/zsh/history";
                     };
+                    shellAliases = generalAliases // sudoAliases;
                     envExtra = ''
                         ZSH_SELF_EXAPWD=true
                         STARSHIP_OS_ICON=""

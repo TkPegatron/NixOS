@@ -1,6 +1,7 @@
 # - { ZStyle } ------------------------------------------------------------------------------ #
 autoload -U compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ''
 
 # - { Keybinds } ---------------------------------------------------------------------------- #
 # Use ctrl+{arrows} to jump around words
