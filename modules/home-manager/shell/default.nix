@@ -6,7 +6,7 @@ in {
     config = mkIf cfg.enable (lib.mkMerge [
         { #--{Shell Related Packages}--------#
             home.packages = with pkgs; [
-                skim fd
+                skim fd perl
             ];
             programs = {
                 home-manager.enable = true;
