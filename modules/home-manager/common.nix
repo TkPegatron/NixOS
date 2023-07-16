@@ -1,11 +1,11 @@
-{ inputs, pkgs, config, ... }:
-
-{
+{ inputs, pkgs, config, ... }: {
     imports = [
         # -- {Import all submodules here}-----------------#
         ./shell
+        ./direnv
         ./neovim
         ./gpg
+        ./git
     ];
     config.modules = {
         # --{ Universally enable submodules}--------------#
