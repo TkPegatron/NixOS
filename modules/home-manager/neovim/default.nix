@@ -15,9 +15,9 @@ in {
                 vim = "${pkgs.neovim}/bin/nvim";
                 vi = "${pkgs.neovim}/bin/nvim";
             };
-            programs.git.includes.neovim = {
+            programs.git.includes = [{ 
                 core.editor = "${pkgs.neovim}/bin/nvim";
-            };
+            }];
         }
     ]);
 }
