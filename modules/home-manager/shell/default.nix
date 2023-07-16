@@ -43,6 +43,7 @@ in {
                 };
                 configFile = {
                     "starship.toml".text = builtins.readFile ./config/starship.toml;
+                    "zsh/zsh_plugins.txt".text = builtins.readFile ./config/zsh_plugins.txt;
                 };
             };
         }
@@ -66,47 +67,47 @@ in {
                     initExtra = lib.concatMapStrings builtins.readFile [
                         ./config/zshrc
                     ];
-                    plugins = with pkgs; [
-                        {
-                            name = "F-Sy-H";
-                            src = fetchFromGitHub {
-                                #url = "https://github.com/z-shell/F-Sy-H.git";
-                                owner = "z-shell";
-                                repo = "F-Sy-H";
-                                sha256 = "sha256-zhaXjrNL0amxexbZm4Kr5Y/feq1+2zW0O6eo9iZhmi0=";
-                                rev = "v1.67";
-                            };
-                        }
-                        {
-                            name = "skim-plugin";
-                            file = "skim.plugin.zsh";
-                            src = fetchFromGitHub {
-                                owner = "casonadams";
-                                repo = "skim.zsh";
-                                rev = "994a8bbc82c1c12fbb20ba0964dbd7a0cacc3b1e";
-                                sha256 = "sha256-fN7mpWIM6r+RkQZZnMH4uRb5Wge7AwmYEzwsrhibeU8=";
-                            };
-                        }
-                        {
-                            name = "zsh-history-substring-search";
-                            file = "zsh-history-substring-search.zsh";
-                            src = fetchFromGitHub {
-                                owner = "zsh-users";
-                                repo = "zsh-history-substring-search";
-                                rev = "v1.0.2";
-                                sha256 = "sha256-Ptxik1r6anlP7QTqsN1S2Tli5lyRibkgGlVlwWZRG3k=";
-                            };
-                        }
-                        {
-                            name = "zsh-completions";
-                            src = fetchFromGitHub {
-                                owner = "zsh-users";
-                                repo = "zsh-completions";
-                                rev = "0.33.0";
-                                sha256 = "sha256-cQSKjQhhOm3Rvnx9V6LAmtuPp/ht/O0IimpunoQlQW8=";
-                            };
-                        }
-                    ];
+                    #plugins = with pkgs; [
+                    #    {
+                    #        name = "F-Sy-H";
+                    #        src = fetchFromGitHub {
+                    #            #url = "https://github.com/z-shell/F-Sy-H.git";
+                    #            owner = "z-shell";
+                    #            repo = "F-Sy-H";
+                    #            sha256 = "sha256-zhaXjrNL0amxexbZm4Kr5Y/feq1+2zW0O6eo9iZhmi0=";
+                    #            rev = "v1.67";
+                    #        };
+                    #    }
+                    #    {
+                    #        name = "skim-plugin";
+                    #        file = "skim.plugin.zsh";
+                    #        src = fetchFromGitHub {
+                    #            owner = "casonadams";
+                    #            repo = "skim.zsh";
+                    #            rev = "994a8bbc82c1c12fbb20ba0964dbd7a0cacc3b1e";
+                    #            sha256 = "sha256-fN7mpWIM6r+RkQZZnMH4uRb5Wge7AwmYEzwsrhibeU8=";
+                    #        };
+                    #    }
+                    #    {
+                    #        name = "zsh-history-substring-search";
+                    #        file = "zsh-history-substring-search.zsh";
+                    #        src = fetchFromGitHub {
+                    #            owner = "zsh-users";
+                    #            repo = "zsh-history-substring-search";
+                    #            rev = "v1.0.2";
+                    #            sha256 = "sha256-Ptxik1r6anlP7QTqsN1S2Tli5lyRibkgGlVlwWZRG3k=";
+                    #        };
+                    #    }
+                    #    {
+                    #        name = "zsh-completions";
+                    #        src = fetchFromGitHub {
+                    #            owner = "zsh-users";
+                    #            repo = "zsh-completions";
+                    #            rev = "0.33.0";
+                    #            sha256 = "sha256-cQSKjQhhOm3Rvnx9V6LAmtuPp/ht/O0IimpunoQlQW8=";
+                    #        };
+                    #    }
+                    #];
                 };
             };
         }
