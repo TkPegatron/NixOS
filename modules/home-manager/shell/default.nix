@@ -76,6 +76,7 @@ in {
                     };
                     envExtra = ''
                         ZSH_SELF_EXAPWD=true
+                        STARSHIP_OS_ICON=""
                     '';
                     initExtra = lib.concatMapStrings builtins.readFile [
                         ./config/zshrc
