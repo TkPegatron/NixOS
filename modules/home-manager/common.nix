@@ -11,6 +11,7 @@
         # --{ Universally enable submodules}--------------#
         shell.enable = true;
         neovim.enable = true;
+        git.enable = true;
     };
     config.home.stateVersion = "23.05";
 }
