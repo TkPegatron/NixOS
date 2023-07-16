@@ -67,9 +67,9 @@ in {
                         {
                             name = "F-Sy-H";
                             src = fetchFromGitHub {
-                                sha256 = "0037hly7v62zhnzbh8816z16yha8wswnizds4gpvy6a897kgvg7c";
-                                rev = "899f68b52b6b86a36cd8178eb0e9782d4aeda714";
                                 url = "https://github.com/z-shell/F-Sy-H.git";
+                                sha256 = "sha256-7Lz95klIGb/vI7r9aLnmSEFvwjcBIbi+hV+YfTyFZwA=";
+                                rev = "v1.67";
                             };
                         }
                     ];
