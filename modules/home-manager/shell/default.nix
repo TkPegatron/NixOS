@@ -42,6 +42,8 @@ in {
             xdg = {
                 enable = true;
                 userDirs = {
+                    enable = true;
+                    createDirectories = true;
                     desktop = "${config.home.homeDirectory}/.desktop";
                     documents = "${config.home.homeDirectory}/Documents";
                     pictures = "${config.home.homeDirectory}/Pictures";
@@ -61,7 +63,7 @@ in {
                 zsh = {
                     enable = true;
                     autocd = true;
-                    dotDir = "${config.xdg.configHome}/zsh";
+                    dotDir = ".config/zsh";
                     enableAutosuggestions = true;
                     history = {
                         size = 500000;
