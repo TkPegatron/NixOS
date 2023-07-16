@@ -32,6 +32,7 @@
 
     fileSystems."/persist" = {
         fsType = "btrfs";
+        neededForBoot = true;
         options = [ "subvol=persist" "noatime" "discard" "compress=zstd" ];
         device = "/dev/disk/by-uuid/50794c99-9df5-41ff-92b8-700e7da4b6fe";
     };
