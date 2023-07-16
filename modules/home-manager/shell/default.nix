@@ -50,6 +50,18 @@ in {
                     enable = true;
                     autocd = true;
                     enableAutosuggestions = true;
+                    history = {
+                        size = 500000;
+                        save = 500000;
+                        extended = false;
+                        ignoreSpace = true;
+                        ignoreDups = true;
+                        share = true;
+                        path = ".config/zsh/zsh_history";
+                    };
+                    initExtra = lib.concatMapStrings builtins.readFile [
+                        ./config/zshrc
+                    ];
                 };
             };
         }
