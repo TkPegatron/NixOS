@@ -1,7 +1,7 @@
 { config, lib, inputs, ... }: {
   imports = [inputs.impermanence.nixosModule];
   services.openssh.hostKeys = [
-    # Override where sshd stores host keys
+    # Store sshd hostkeys within persist
     {type = "ed25519"; path = "/persist/ssh/ssh_host_ed25519_key";}
     {type = "rsa"; bits = 4096; path = "/persist/ssh/ssh_host_rsa_key";}
   ];
@@ -10,7 +10,11 @@
     directories = [
       "/etc/NetworkManager" # NetworkManager configuration data
       "/etc/nixos"          # nixos system config files
-      "/var/lib"            # system service persistent data
+      "/var/lib"            # system service data
+      #"/var/log"            # system logging data, currently its own btrfs subvol
+    ];
+    files = [
+      "/etc/machine-id" # systmed uses this to identify the machine in logs
     ];
   };
   # for some reason *this* is what makes networkmanager not get screwed completely instead of the impermanence module
