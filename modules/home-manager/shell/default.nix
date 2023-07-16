@@ -70,7 +70,7 @@ in {
                                 #url = "https://github.com/z-shell/F-Sy-H.git";
                                 owner = "z-shell";
                                 repo = "F-Sy-H";
-                                sha256 = "sha256-7Lz95klIGb/vI7r9aLnmSEFvwjcBIbi+hV+YfTyFZwA=";
+                                sha256 = "sha256-zhaXjrNL0amxexbZm4Kr5Y/feq1+2zW0O6eo9iZhmi0=";
                                 rev = "v1.67";
                             };
                         }
