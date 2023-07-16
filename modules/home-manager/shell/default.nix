@@ -42,11 +42,11 @@ in {
             xdg = {
                 enable = true;
                 userDirs = {
-                    desktop = "$HOME/.desktop";
+                    desktop = "${config.home.homeDirectory}/.desktop";
                     documents = "${config.home.homeDirectory}/Documents";
-                    music = "${config.home.homeDirectory}/Music";
                     pictures = "${config.home.homeDirectory}/Pictures";
                     videos = "${config.home.homeDirectory}/Videos";
+                    music = "${config.home.homeDirectory}/Music";
                 };
             };
         }
@@ -70,7 +70,7 @@ in {
                         ignoreSpace = true;
                         ignoreDups = true;
                         share = true;
-                        path = "${config.xdg.configHome}/zsh/zsh_history";
+                        path = "${config.xdg.dataHome}/zsh/history";
                     };
                     envExtra = ''
                         ZSH_SELF_EXAPWD=true
