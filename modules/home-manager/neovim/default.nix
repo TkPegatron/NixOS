@@ -10,6 +10,11 @@ in {
                 EDITOR = "nvim";
                 VISUAL = "nvim";
             };
+            environment.shellAliases = { 
+                nano = "nvim";
+                vim = "nvim";
+                vi = "nvim";
+            };
         }
     ]);
 }
