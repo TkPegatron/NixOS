@@ -10,7 +10,7 @@ in {
                 EDITOR = "nvim";
                 VISUAL = "nvim";
             };
-            environment.shellAliases = { 
+            programs.zsh.shellAliases = { 
                 nano = "nvim";
                 vim = "nvim";
                 vi = "nvim";
