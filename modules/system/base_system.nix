@@ -109,6 +109,7 @@
             };
         }
         { #--{Network Configuration}-----------#
+            #? Consider switching to networkd
             networking = {
                 firewall.enable = true;
                 networkmanager.enable =true;
@@ -145,7 +146,8 @@
                 "net.core.default_qdisc" = "cake";
                 "net.ipv4.tcp_congestion_control" = "bbr";
             };
-            # Avoid waiting for network during boot
+            # Start NetworkManager during boot but Avoid waiting for a lease
+            systemd.services.NetworkManager.enable = true;
             systemd.services.NetworkManager-wait-online.enable = false;
         }
         { #--{System Security Considerations}--#
