@@ -12,18 +12,19 @@ in
       root = {
         shell = pkgs.zsh;
         initialHashedPassword =
-          "$6$PGLB6RuHp8APuNbK$wijx7Ggs//iS6e79/gITwnCYk4v.pFDrqReqDUa1Ft/nV5eNeY9gMJeewFMY4HNixL5dtTDhQ1aQIYUsEAZlp.";
+          "$6$07pSAiuhrIo/eUrG$lPg.obuFm7Ewt0k6NP3iDU4Himtu99UAMZ62jbaupTMixrF8zNPY6e15TE9yOJoI1jCpjanW/muDkaXcMYAL0.";
         hashedPassword = config.users.users."root".initialHashedPassword;
       };
       elliana = {
         description = "Elliana Perry";
         isNormalUser = true;
         initialHashedPassword = 
-          "$6$XbN67zeoi4SK8f7W$Tj5lFhMjNbBSvbBF1.zAgOM0jxqMmMNy/mhhXoNONXW2MZdW1rHReyAk5MTaOZpfEvXx7wes6xyt21/93T5s1.";
+          "$6$Zby1R5nVdcA/3L2A$OY4SUiTiQreKuXtgx8SqAiVgaSTlV7g/Pd4ANYDF9pInsBwyurU6DxzGSUM0/COkUkhMEz3M2lAoUAaDnhcyQ.";
         hashedPassword = config.users.users."elliana".initialHashedPassword;
         openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID1WrsxCqVK8oVf4whQs3W+vAV8ioV4bVr7399SSj4xC"
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII+gTodZbPhGkhk3DJDn4MKTURN0pW1jnKKj4QYKJ58j"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8u8SQls2xm80xrDKGufi9mfrngmjLiapsRnMh1QITi"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPIYbWTYTT64VUBOABSKuCBN5H1mE/NgTT0K1Xjzszbn"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJKRwLHJDFwHodUByK0hO0B3ofWGE9fWp13RhFZAu9xc"
         ];
         extraGroups = groupsIfExist [
           "wheel" "audio" "video"
