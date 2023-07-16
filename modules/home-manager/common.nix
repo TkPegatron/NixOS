@@ -5,6 +5,7 @@
         # -- {Import all submodules here}-----------------#
         ./shell
         ./neovim
+        ./gpg
     ];
     config.modules = {
         # --{ Universally enable submodules}--------------#
