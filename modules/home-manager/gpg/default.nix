@@ -41,9 +41,9 @@ in {
                 enableExtraSocket = true;
                 enableScDaemon = true;
                 maxCacheTtl = 31536000;
-                maxCacheTtlSsh = "${config.services.gpg-agent.maxCacheTtl}";
-                defaultCacheTtl = "${config.services.gpg-agent.maxCacheTtl}";
-                defaultCacheTtlSsh = "${config.services.gpg-agent.maxCacheTtl}";
+                maxCacheTtlSsh = config.services.gpg-agent.maxCacheTtl;
+                defaultCacheTtl = config.services.gpg-agent.maxCacheTtl;
+                defaultCacheTtlSsh = config.services.gpg-agent.maxCacheTtl;
             };
             home.sessionVariables = {
                 GNUPGHOME = config.programs.gpg.homedir;
