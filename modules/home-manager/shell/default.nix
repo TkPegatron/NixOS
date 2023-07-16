@@ -74,6 +74,35 @@ in {
                                 rev = "v1.67";
                             };
                         }
+                        {
+                            name = "skim-plugin";
+                            file = "skim.plugin.zsh";
+                            src = fetchFromGitHub {
+                                owner = "casonadams";
+                                repo = "skim.zsh";
+                                rev = "994a8bbc82c1c12fbb20ba0964dbd7a0cacc3b1e";
+                                sha256 = lib.fakeSha256;
+                            };
+                        }
+                        {
+                            name = "zsh-history-substring-search";
+                            file = "zsh-history-substring-search.zsh";
+                            src = fetchFromGitHub {
+                                owner = "zsh-users";
+                                repo = "zsh-history-substring-search";
+                                rev = "v1.0.2";
+                                sha256 = "sha256-Ptxik1r6anlP7QTqsN1S2Tli5lyRibkgGlVlwWZRG3k=";
+                            };
+                        }
+                        {
+                            name = "zsh-completions";
+                            src = fetchFromGitHub {
+                                owner = "zsh-users";
+                                repo = "zsh-completions";
+                                rev = "0.33.0";
+                                sha256 = "sha256-cQSKjQhhOm3Rvnx9V6LAmtuPp/ht/O0IimpunoQlQW8=";
+                            };
+                        }
                     ];
                 };
             };
