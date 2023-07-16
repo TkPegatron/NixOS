@@ -5,6 +5,9 @@ in {
     options.modules.shell = { enable = mkEnableOption "shell"; };
     config = mkIf cfg.enable (lib.mkMerge [
         { #--{Shell Related Packages}--------#
+            home.packages = with pkgs; [
+                skim
+            ];
             programs = {
                 home-manager.enable = true;
                 exa = {
