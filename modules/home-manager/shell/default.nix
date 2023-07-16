@@ -81,7 +81,7 @@ in {
                                 owner = "casonadams";
                                 repo = "skim.zsh";
                                 rev = "994a8bbc82c1c12fbb20ba0964dbd7a0cacc3b1e";
-                                sha256 = lib.fakeSha256;
+                                sha256 = "sha256-fN7mpWIM6r+RkQZZnMH4uRb5Wge7AwmYEzwsrhibeU8=";
                             };
                         }
                         {
