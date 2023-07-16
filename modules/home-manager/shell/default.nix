@@ -67,7 +67,7 @@ in {
                         {
                             name = "F-Sy-H";
                             src = fetchFromGitHub {
-                                url = "https://github.com/z-shell/F-Sy-H.git";
+                                #url = "https://github.com/z-shell/F-Sy-H.git";
                                 owner = "z-shell";
                                 repo = "F-Sy-H";
                                 sha256 = "sha256-7Lz95klIGb/vI7r9aLnmSEFvwjcBIbi+hV+YfTyFZwA=";
