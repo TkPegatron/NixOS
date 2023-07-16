@@ -5,13 +5,13 @@
             modules = {};
         }
         { #--{Git User-Specific Config}---------------------#
-            programs.git.includes = [{
+            programs.git.includes.default.contents = {
                 user = {
                     name = "Elliana Perry";
                     email = "elliana.perry@gmail.com";
                 };
                 commit.gpgSign = true;
-            }];
+            };
         }
         { #--{GPG User-Specific Config}---------------------#
             modules.gpg.enable = true;
