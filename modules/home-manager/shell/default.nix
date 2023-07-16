@@ -36,7 +36,7 @@ in {
             };
             home.sessionPath = {
                 "${config.home.homeDirectory}/.local/bin"
-            }
+            };
         }
         { #--{XDG Enforcement}---------------#
             xdg = {
@@ -48,15 +48,16 @@ in {
                     pictures = "${config.home.homeDirectory}/Pictures";
                     videos = "${config.home.homeDirectory}/Videos";
                 };
-                configFile = {
-                    "starship.toml".text = builtins.readFile ./config/starship.toml;
-                    #"zsh/zsh_plugins.txt".text = builtins.readFile ./config/zsh_plugins.txt;
-                };
             };
+        }
+        { #--{Starship PS1 Configuration}----#
+            programs.starship.enable = true;
+            xdg.configFile = {
+                "starship.toml".text = builtins.readFile ./config/starship.toml;
+            }
         }
         { #--{ZShell Configuration}----------#
             programs= {
-                starship.enable = true;
                 zsh = {
                     enable = true;
                     autocd = true;
