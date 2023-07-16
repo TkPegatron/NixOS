@@ -49,7 +49,7 @@ in {
                 zsh = {
                     enable = true;
                     autocd = true;
-                    dotDir = "${XDG_CONFIG_HOME}/zsh";
+                    dotDir = ".config/zsh";
                     enableAutosuggestions = true;
                     history = {
                         size = 500000;
