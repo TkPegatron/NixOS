@@ -49,6 +49,7 @@ in {
                 zsh = {
                     enable = true;
                     autocd = true;
+                    dotDir = "${XDG_CONFIG_HOME}/zsh";
                     enableAutosuggestions = true;
                     history = {
                         size = 500000;
