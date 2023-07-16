@@ -63,6 +63,16 @@ in {
                     initExtra = lib.concatMapStrings builtins.readFile [
                         ./config/zshrc
                     ];
+                    plugins = with pkgs; [
+                        {
+                            name = "F-Sy-H";
+                            src = fetchFromGitHub {
+                                sha256 = "0037hly7v62zhnzbh8816z16yha8wswnizds4gpvy6a897kgvg7c";
+                                rev = "899f68b52b6b86a36cd8178eb0e9782d4aeda714";
+                                url = "https://github.com/z-shell/F-Sy-H.git";
+                            };
+                        }
+                    ];
                 };
             };
         }
