@@ -1,8 +1,8 @@
 { inputs, pkgs, config, ... }: {
     imports = [
         # -- {Import all submodules here}-----------------#
+        ./gnome
         ./shell
-        ./direnv
         ./neovim
         ./gpg
         ./git

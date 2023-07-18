@@ -2,7 +2,9 @@
     imports = [ ./common.nix ];
     config = lib.mkMerge [
         { #--{Modules Configuration}------------------------#
-            modules = {};
+            modules = {
+                gnome.enable = true;
+            };
         }
         { #--{Git User-Specific Config}---------------------#
             programs.git.includes = [{

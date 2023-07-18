@@ -1,4 +1,5 @@
 { config, pkgs, lib, inputs, ... }: {
+    imports = [ ./graphical.nix ]
     config = lib.mkMerge ([
         { #--{Locale Configuration}------------#
             time.timeZone = "America/Detroit";
@@ -113,7 +114,15 @@
             networking = {
                 firewall.enable = true;
                 networkmanager.enable =true;
+                nameservers = [
+                    "1.1.1.1" "1.0.0.1"
+                    "2606:4700:4700::1111"
+                    "2606:4700:4700::1001"
+                ];
             };
+            # Start NetworkManager during boot but Avoid waiting for a lease
+            #systemd.services.NetworkManager-wait-online.enable = false;
+            systemd.services.NetworkManager.enable = true;
             boot.kernelModules = [ "tcp_bbr" ];
             boot.kernel.sysctl = {
                 # Prevent bogus ICMP errors from filling up logs.
@@ -146,9 +155,6 @@
                 "net.core.default_qdisc" = "cake";
                 "net.ipv4.tcp_congestion_control" = "bbr";
             };
-            # Start NetworkManager during boot but Avoid waiting for a lease
-            systemd.services.NetworkManager.enable = true;
-            systemd.services.NetworkManager-wait-online.enable = false;
         }
         { #--{System Security Considerations}--#
             #? Consider adding apparmor
