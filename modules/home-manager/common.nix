@@ -1,6 +1,7 @@
 { inputs, pkgs, config, ... }: {
     imports = [
         # -- {Import all submodules here}-----------------#
+        ./graphical_misc
         ./gnome
         ./shell
         ./neovim
