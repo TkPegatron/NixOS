@@ -1,6 +1,7 @@
 { config, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         {
+            hardware.pulseaudio.enable = false;
             services.pipewire = {
                 enable = true;
                 # Compatibility shims
