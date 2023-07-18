@@ -29,7 +29,7 @@
         }
         { # Remove or replace gnome's default packages
             environment.gnome.excludePackages = with pkgs.gnome; [
-                gnome-initial-setup gnome-music gnome-photos 
+                gnome-initial-setup gnome-music
                 gnome-weather simple-scan totem epiphany geary
                 yelp tali cheese
             ];
