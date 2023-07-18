@@ -13,7 +13,6 @@
                 enable = true;
                 desktopManager.gnome.enable = true;
                 displayManager = {
-                    enable = true;
                     gdm.enable = true;
                     gdm.wayland = true;
                     autoLogin.enable = true;
