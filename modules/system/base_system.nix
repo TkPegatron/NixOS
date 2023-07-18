@@ -1,5 +1,5 @@
 { config, pkgs, lib, inputs, ... }: {
-    imports = [ ./graphical.nix ]
+    imports = [ ./graphical.nix ];
     config = lib.mkMerge ([
         { #--{Locale Configuration}------------#
             time.timeZone = "America/Detroit";
