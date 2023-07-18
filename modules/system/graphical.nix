@@ -33,7 +33,7 @@
                 gnome-weather simple-scan totem epiphany geary
                 yelp tali cheese
             ];
-            environment.systemPackages = with pkgs [
+            environment.systemPackages = with pkgs; [
                 celluloid # MPV Frontend
                 # Havent Decided between these two yet
                 qimgv libsForQt5.gwenview
