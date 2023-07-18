@@ -4,5 +4,6 @@
         ./development.nix
         ./multimedia.nix
         ./web_browser.nix
+        ./communication.nix
     ];
 }
