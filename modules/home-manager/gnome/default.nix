@@ -7,6 +7,8 @@ in {
         {
             #services.gnome-keyring.enable = true;
             home.packages = with pkgs; [
+                dconf2nix
+                yubikey-manager-qt
                 # Gnome Extensions
                 gnomeExtensions.unite
                 gnomeExtensions.espresso

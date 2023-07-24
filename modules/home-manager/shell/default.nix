@@ -20,6 +20,7 @@ let
 
 in {
     options.modules.shell = { enable = mkEnableOption "shell"; };
+    imports = mkIf cfg.enable [ ./cli-apps.nix ];
     config = mkIf cfg.enable (lib.mkMerge [
         { #--{Shell Related Packages}--------#
             home.packages = with pkgs; [
