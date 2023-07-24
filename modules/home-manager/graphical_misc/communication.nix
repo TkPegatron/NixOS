@@ -1,4 +1,4 @@
-{ config, lib, inputs, ...}: {
+{ config, lib, pkgs, inputs, ...}: {
     config = lib.mkMerge [
         {
             home.packages = with pkgs; [
