@@ -6,6 +6,8 @@
 
     # Include Intel Microcode
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # Include wifi firmware, among other things
+    hardware.enableRedistributableFirmware = true;
 
     boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
     boot.initrd.kernelModules = [ ];
@@ -59,9 +61,6 @@
 
     # Do not use swap device
     swapDevices = [];
-
-    # Enable wireless networking
-    networking.wireless.enable = true;
 
     system.stateVersion = "23.05";
 }
