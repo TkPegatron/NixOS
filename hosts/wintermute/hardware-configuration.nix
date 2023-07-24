@@ -60,5 +60,8 @@
     # Do not use swap device
     swapDevices = [];
 
+    # Enable wireless networking
+    networking.wireless.enable = true;
+
     system.stateVersion = "23.05";
 }
