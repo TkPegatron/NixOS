@@ -11,6 +11,9 @@ in {
                 core = {
                     excludesfile = "$NIXOS_CONFIG_DIR/scripts/gitignore";
                 };
+                safe = {
+                    directory = "/etc/nixos";
+                };
             };
         };
     };
