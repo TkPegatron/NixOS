@@ -5,7 +5,7 @@ in {
     options.modules.gnome = { enable = mkEnableOption "gnome"; };
     config = mkIf cfg.enable (lib.mkMerge [
         {
-            #services.gnome-keyring.enable = true;
+            services.gnome-keyring.enable = true;
             home.packages = with pkgs; [
                 dconf2nix
                 yubikey-manager-qt
