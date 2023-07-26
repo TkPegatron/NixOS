@@ -1,24 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }: {
-    imports = [
-        (modulesPath + "/profiles/qemu-guest.nix")
-        (./impermanence.nix)
-    ];
-
-    # Include Intel Microcode
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    # Include wifi firmware, among other things
-    hardware.enableRedistributableFirmware = true;
-
-    boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-    boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
-    boot.extraModulePackages = [ ];
-
-    boot.loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
-    };
-
+{ config, lib, pkgs, ... }: {
     boot.initrd.luks.devices = {
         "nixos-system".device = "/dev/disk/by-uuid/a07609af-3065-409b-854f-686c366b0521";
     };
@@ -61,6 +41,4 @@
 
     # Do not use swap device
     swapDevices = [];
-
-    system.stateVersion = "23.05";
 }

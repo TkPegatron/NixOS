@@ -16,6 +16,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        agenix = {
+            url = "github:ryantm/agenix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         #hyprland = {
         #    url = "github:hyprwm/Hyprland/";
         #    inputs.nixpkgs.follows = "nixpkgs";
@@ -35,7 +40,7 @@
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, nur, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, nur, agenix, ... }@inputs: 
         let
             system = "x86_64-linux"; #current system
             pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -48,7 +53,9 @@
                         # General configuration (users, networking, sound, etc)
                         ./modules/system/default.nix
                         # Hardware config (bootloader, kernel modules, filesystems, etc)
-                        (./. + "/hosts/${hostname}/hardware-configuration.nix")
+                        (./. + "/hosts/${hostname}/")
+                        # AGE Secrets Encryption
+                        agenix.nixosModules.default
                         home-manager.nixosModules.home-manager
                         {
                             home-manager = {
