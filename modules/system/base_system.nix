@@ -113,6 +113,7 @@
             #? Consider switching to networkd
             networking = {
                 firewall.enable = true;
+                nftables.enable = true;
                 networkmanager.enable =true;
                 nameservers = [
                     "1.1.1.1" "1.0.0.1"
