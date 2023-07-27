@@ -16,6 +16,8 @@
             #    { # home firewall
             #        publicKey = "{client public key}";
             #        allowedIPs = [ "10.0.0.2/32" ];
+            #        endpoint = "{server ip}:51820";
+            #        persistentKeepalive = 25;
             #    }
             #];
         };
