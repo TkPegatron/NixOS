@@ -1,10 +1,15 @@
-{ config, lib, inputs, ...}: {
+{ config, pkgs, lib, inputs, ...}: {
     imports = [ ./common.nix ];
     config = lib.mkMerge [
         { #--{Modules Configuration}------------------------#
             modules = {
                 gnome.enable = true;
             };
+        }
+        { #--{Use Rusty uutils}-----------------------------#
+            home.packages = [
+                (pkgs.uutils-coreutils.override { prefix = ""; })
+            ];
         }
         { #--{Git User-Specific Config}---------------------#
             programs.git.includes = [{
