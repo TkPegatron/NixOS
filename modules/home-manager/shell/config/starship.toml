@@ -31,11 +31,9 @@ truncation_length = 100
 
 [custom.system_icons]
 description = "Show system icons"
-command     = 'echo $STARSHIP_OS_ICON'
-#command     = '([ $(uname -s) == "Darwin" ] && echo ) || ([ $(uname -s) == "Linux" ] && echo )'
+command     = 'echo '
 format      = "[$output]($style)"
 style       = "bold bright-yellow"
-shell       = ["bash", "--noprofile", "--norc"]
 when        = "true"
 
 
