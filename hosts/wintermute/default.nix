@@ -18,6 +18,12 @@
     boot.kernelModules = [ "kvm-intel" ];
     boot.extraModulePackages = [ ];
 
+    boot.plymouth = {
+       enable = true;
+       #themePackages = [self'.packages.catppuccin-plymouth];
+       #theme = "catppuccin-mocha";
+    };
+
     boot.loader = {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
