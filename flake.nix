@@ -56,6 +56,7 @@
                         (./. + "/hosts/${hostname}/")
                         # AGE Secrets Encryption
                         agenix.nixosModules.default
+                        # Home-Manager
                         home-manager.nixosModules.home-manager
                         {
                             home-manager = {
@@ -79,6 +80,7 @@
             nixosConfigurations = {
                 # -{ System Definitions }
                 wintermute = mkSystem inputs.nixpkgs "x86_64-linux" "wintermute";
+                legion = mkSystem inputs.nixpkgs "x86_64-linux" "legion";
             };
     };
 }
