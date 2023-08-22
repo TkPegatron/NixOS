@@ -24,7 +24,7 @@ in {
     config = mkIf cfg.enable (lib.mkMerge [
         { #--{Shell Related Packages}--------#
             home.packages = with pkgs; [
-                skim fd perl ripgrep-all
+                skim fd perl #ripgrep-all
                 bottom
             ];
             programs = {
