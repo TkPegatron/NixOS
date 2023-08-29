@@ -42,6 +42,13 @@
         { #--{System Packages}-----------------#
             environment.systemPackages = with pkgs; [
                 rsync
+                dogdns
+            ];
+        }
+        { #--{Package Aliases}-----------------#
+            environment.systemPackages = with pkgs; [
+                # Use dogdns as nslookup
+                (pkgs.writeShellScriptBin "nslookup" "exec -a $0 ${dogdns}/bin/dog $@")
             ];
         }
         { #--{System Security Considerations}--#
