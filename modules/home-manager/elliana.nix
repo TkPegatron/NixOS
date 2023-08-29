@@ -7,8 +7,9 @@
             };
         }
         { #--{Use Rusty uutils}-----------------------------#
-            home.packages = [
-                (pkgs.uutils-coreutils.override { prefix = ""; })
+            home.packages = with pkgs; [
+                (uutils-coreutils.override { prefix = ""; })
+                openlens
             ];
         }
         { #--{Git User-Specific Config}---------------------#
