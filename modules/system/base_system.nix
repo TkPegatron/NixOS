@@ -41,6 +41,7 @@
         }
         { #--{System Packages}-----------------#
             environment.systemPackages = with pkgs; [
+                jq jqp ijq yq # JSON/YAML Query tools
                 rsync
                 dogdns
             ];
