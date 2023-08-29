@@ -7,13 +7,14 @@
                 keyMap = "us";
             };
             fonts = {
-                fonts = with pkgs; [
+                packages = with pkgs; [
                     (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
                     openmoji-color
                 ];
                 fontconfig = {
                     hinting.autohint = true;
                     defaultFonts = {
+                        monospace = ["CaskaydiaCove Nerd Font Mono"];
                         emoji = [ "OpenMoji Color" ];
                     };
                 };
