@@ -34,14 +34,17 @@ in {
                     enableAliases = true;
                 };
                 bat = {
-                  enable = true;
-                  config = {
-                    theme = "TwoDark";
-                    map-syntax = [
-                      ".ignore:Git Ignore"
-                      ".stignore:Git Ignore"
+                    enable = true;
+                    config = {
+                        theme = "TwoDark";
+                        map-syntax = [
+                            ".ignore:Git Ignore"
+                            ".stignore:Git Ignore"
+                        ];
+                    };
+                    extraPackages = with pkgs.bat-extras; [
+                        batdiff batman batwatch batwatch
                     ];
-                  };
                 };
                 direnv = {
                     enable = true;
@@ -53,8 +56,6 @@ in {
         { #--{Session Environment}-----------#
             home.sessionVariables = {
                 LANG = "en_US.UTF-8";
-                PAGER = "less -FirSwX";
-                MANPAGER = "sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'";
             };
             home.sessionPath = [
                 "${config.home.homeDirectory}/.local/bin"
