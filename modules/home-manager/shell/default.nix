@@ -29,7 +29,7 @@ in {
             ];
             programs = {
                 home-manager.enable = true;
-                exa = {
+                lsd = {
                     enable = true;
                     enableAliases = true;
                 };
@@ -99,7 +99,7 @@ in {
                     };
                     shellAliases = generalAliases // sudoAliases;
                     envExtra = ''
-                        ZSH_SELF_EXAPWD=true
+                        ZSH_SELF_LSPWD=true
                         STARSHIP_OS_ICON=""
                     '';
                     initExtra = lib.concatMapStrings builtins.readFile [
@@ -110,10 +110,10 @@ in {
                         plugins = [
                             { name = "belak/zsh-utils"; tags = [ use:completion ]; }
                             { name = "zsh-users/zsh-history-substring-search"; }
+                            { name = "z-shell/F-Sy-H"; tags = [ defer:2 ]; }
                             { name = "zsh-users/zsh-autosuggestions"; }
                             { name = "zsh-users/zsh-completions"; }
                             { name = "casonadams/skim.zsh"; }
-                            { name = "z-shell/F-Sy-H"; }
                         ];
                     };
                 };
