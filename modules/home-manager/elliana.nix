@@ -6,10 +6,15 @@
                 gnome.enable = true;
             };
         }
-        { #--{Use Rusty uutils}-----------------------------#
+        { #--{User Applications}-----------------------------#
             home.packages = with pkgs; [
+                # Use rust rewrite of gnu coreutils
                 (uutils-coreutils.override { prefix = ""; })
+                # K8s lens
                 openlens
+                # Misc
+                blahaj     # You know what this does
+                bottom-rs  # ""Translates text to bottomspeak""
             ];
         }
         { #--{Git User-Specific Config}---------------------#
