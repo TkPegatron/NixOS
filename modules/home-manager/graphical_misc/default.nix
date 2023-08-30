@@ -6,4 +6,5 @@
         ./web_browser.nix
         ./communication.nix
     ];
+    fonts.fontconfig.enable = true;
 }
