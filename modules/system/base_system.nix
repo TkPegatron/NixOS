@@ -7,7 +7,7 @@
                 keyMap = "us";
             };
             fonts = {
-                packages = with pkgs; [
+                fonts = with pkgs; [
                     (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
                     openmoji-color
                 ];
