@@ -10,11 +10,12 @@
             home.packages = with pkgs; [
                 # Use rust rewrite of gnu coreutils
                 (uutils-coreutils.override { prefix = ""; })
-                # K8s lens
-                openlens
                 # Misc
+                openlens   # Kubernetes IDE
                 blahaj     # You know what this does
                 bottom-rs  # ""Translates text to bottomspeak""
+                restic     # Restic utility
+                s3fs       # Fuse util for mounting S3 buckets
             ];
         }
         { #--{Git User-Specific Config}---------------------#
