@@ -4,22 +4,27 @@
         owner = "root";
         group = "root";
     };
-    networking.firewall = {
-        allowedUDPPorts = [ 51820 ];
-    };
-    networking.wireguard.interfaces = {
+    #networking.firewall = {
+    #    allowedUDPPorts = [ 51820 ];
+    #};
+    networking.wg-quick.interfaces = {
         wg-home-ra = {
-            ips = [ "172.22.0.130" ];
-            listenPort = 51820;
             privateKeyFile = config.age.secrets.wireguard_key.path;
-            #peers = [
-            #    { # home firewall
-            #        publicKey = "{client public key}";
-            #        allowedIPs = [ "10.0.0.2/32" ];
-            #        endpoint = "{server ip}:51820";
-            #        persistentKeepalive = 25;
-            #    }
-            #];
+            address = [ "172.22.0.130/25" ];
+            #listenPort = 51820;
+            postUp = [
+                "resolvectl domain wg-home-ra '~zynthovian.xyz'"
+                "resolvectl dns wg-home-ra 172.22.0.129"
+            ];
+            peers = [
+                {
+                    endpoint = "vpn.zynthovian.xyz:51820";
+                    publicKey = "Z5y5mnVxyn6ltOvPTHd1ZmsnlqIEXHT1Y5QOTjNJpiY=";
+                    persistentKeepalive = 25;
+                    allowedIPs = [ "172.22.0.0/23" ];
+                }
+                
+            ];
         };
     };
 }
