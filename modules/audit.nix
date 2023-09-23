@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }: {
+{ config, pkgs, lib, ... }: {
     config = lib.mkMerge ([
         {
             security.audit.enable = true;

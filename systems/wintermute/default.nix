@@ -2,7 +2,7 @@
     # Submodule imports
     imports = [
         ./filesystems.nix
-        ./networking.nix
+        ./wireguard.nix
         ./impermanence.nix
     ];
 

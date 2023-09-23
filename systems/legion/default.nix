@@ -2,7 +2,6 @@
 { config, lib, inputs, pkgs, ... }: {
     imports = [
         ./filesystems.nix
-        ./gaming.nix
     ];
 
     system.stateVersion = "23.05";
@@ -11,6 +10,10 @@
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # Include wifi firmware, among other things
     hardware.enableRedistributableFirmware = true;
+
+
+    # Enable amdgpu driver usage in graphical server
+    services.xserver.videoDrivers = [ "amdgpu" ];
 
     boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
     boot.initrd.kernelModules = [ "amdgpu" ];
