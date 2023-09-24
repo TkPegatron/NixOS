@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, ... }: {
+{ config, lib, nixpkgs, inputs, pkgs, ... }: {
   config = lib.mkMerge ([
     { # Vulkan OpenGL support
       hardware.opengl = {

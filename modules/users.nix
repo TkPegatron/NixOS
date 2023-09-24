@@ -1,7 +1,7 @@
 { config, pkgs, ... }: let
   groupExists = grp: builtins.hasAttr grp config.users.groups;
   groupsIfExist = builtins.filter groupExists;
-  usergroups = [
+  extraUserGroups = groupsIfExist [
     "wheel" "audio" "video"
     "input" "plugdev" "dialout"
     "docker" "podman" "libvirtd"
@@ -22,6 +22,7 @@ in {
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Elliana Perry";
+    extraGroups = extraUserGroups;
     initialHashedPassword = 
       "$6$Zby1R5nVdcA/3L2A$OY4SUiTiQreKuXtgx8SqAiVgaSTlV7g/Pd4ANYDF9pInsBwyurU6DxzGSUM0/COkUkhMEz3M2lAoUAaDnhcyQ.";
     hashedPassword = config.users.users."elliana".initialHashedPassword;

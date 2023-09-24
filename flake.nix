@@ -20,7 +20,10 @@
   let
     system = "x86_64-linux";
     stateVersion = "23.05";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
     utils = import ./lib {
       inherit inputs self home-manager
               nixpkgs system pkgs nur
@@ -29,6 +32,13 @@
   in
   {
     nixosConfigurations = {
+      wintermute = utils.mkSystem {
+        hostname = "wintermute";
+        extraModules = [
+          ./modules/extra/gnome.nix
+          ./modules/extra/virtualization.nix
+        ];
+      };
       legion = utils.mkSystem {
         hostname = "legion";
         extraModules = [

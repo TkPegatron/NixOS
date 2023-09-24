@@ -1,9 +1,8 @@
-{ config, lib, pkgs, inputs, ...}: {
-    config = lib.mkMerge [
+{ config, lib, pkgs, nixpkgs, inputs, ...}: {
+    config = lib.mkMerge ([
         {
-            home.packages = with pkgs; [
-                discord
-            ];
+            nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "discord" ];
+            home.packages = with pkgs; [ discord ];
         }
-    ];
+    ]);
 }
