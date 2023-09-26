@@ -17,7 +17,7 @@
                     endpoint = "vpn.zynthovian.xyz:51820";
                     publicKey = "Z5y5mnVxyn6ltOvPTHd1ZmsnlqIEXHT1Y5QOTjNJpiY=";
                     persistentKeepalive = 25;
-                    allowedIPs = [ "172.22.0.0/23" ];
+                    allowedIPs = [ "172.22.0.0/23" "172.21.0.0/24" ];
                 }
                 
             ];
