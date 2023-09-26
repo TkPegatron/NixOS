@@ -22,7 +22,9 @@
     stateVersion = "23.05";
     pkgs = import nixpkgs {
       inherit system;
+      #config = import ./nixpkgs/config.nix {};
       config.allowUnfree = true;
+      overlays = import ./nixpkgs/overlays.nix { inherit inputs pkgs; };
     };
     utils = import ./lib {
       inherit inputs self home-manager

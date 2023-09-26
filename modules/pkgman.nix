@@ -2,7 +2,6 @@
 { config, nixpkgs, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         { #--{Package Management}--------------#
-            nixpkgs.config.allowUnfree = true;
             documentation = {
                 enable = true;
                 doc.enable = false;
