@@ -39,7 +39,7 @@
         i18n.defaultLocale = "en_US.UTF-8";
         console.keyMap = "us";
         fonts = {
-            packages = with pkgs; [
+            fonts = with pkgs; [
                 (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
                 openmoji-color
             ];
