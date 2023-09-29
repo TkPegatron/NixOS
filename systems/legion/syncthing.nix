@@ -4,8 +4,9 @@
     user = "elliana";
     dataDir = "/home/elliana/";
     configDir = "/home/elliana/.config/syncthing";
-    overrideDevices = true;
-    overrideFolders = true;
+    #extraFlags = [ "--reset-deltas" ];
+    #overrideDevices = true;
+    #overrideFolders = true;
     devices = {
       "KubernetesKluster" = { 
         introducer = true;
