@@ -1,6 +1,9 @@
 { config, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         { #--{Network Configuration}-----------#
+            environment.systemPackages = with pkgs; [
+                ivpn ivpn-service doggo
+            ];
             #? Consider switching to networkd
             networking = {
                 firewall.enable = true;
