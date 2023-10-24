@@ -17,6 +17,12 @@
       # Install MangoHUD
       environment.systemPackages = with pkgs; [ mangohud ];
     }
+    { #--{ Minecraf launcher and configuration }------------#
+      # This could be moved into the userspace
+      environment.systemPackages = with pkgs; [
+        prismlauncher
+      ];
+    }
     { #--{ Install Glorious Egroll Proton }-----------------#
       environment.systemPackages = [
         inputs.nix-gaming.packages.${pkgs.system}.proton-ge
