@@ -23,31 +23,26 @@
   };
   outputs = { self, nixpkgs, home-manager, nur, agenix, ... }@inputs:
   let
-    system = "x86_64-linux";
-    stateVersion = "23.05";
-    pkgs = import nixpkgs {
-      inherit system;
-      #config = import ./nixpkgs/config.nix {};
-      config.allowUnfree = true;
-      overlays = import ./nixpkgs/overlays.nix { inherit inputs pkgs; };
-    };
-    utils = import ./lib {
-      inherit inputs self home-manager
-              nixpkgs system pkgs nur
-              agenix stateVersion;
-    };
-  in
-  {
+    inherit (self) outputs;
+    forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux"];
+    forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+    myLib = import ./lib {inherit inputs outputs;};
+  in {
+    overlays = import ./overlays {inherit inputs outputs;};
+    packages = forEachPkgs (pkgs: import ./pkgs {inherit pkgs;});
+    
     nixosConfigurations = {
-      wintermute = utils.mkSystem {
+      wintermute = myLib.mkSystem {
         hostname = "wintermute";
+        system = "x86_64-linux";
         extraModules = [
           ./modules/extra/gnome.nix
           ./modules/extra/virtualization.nix
         ];
       };
-      legion = utils.mkSystem {
+      legion = myLib.mkSystem {
         hostname = "legion";
+        system = "x86_64-linux";
         extraModules = [
           ./modules/extra/gnome.nix
           ./modules/extra/gaming.nix
