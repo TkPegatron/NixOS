@@ -28,5 +28,12 @@
         inputs.nix-gaming.packages.${pkgs.system}.proton-ge
       ];
     }
+    { #--{ Dark and Darker }-----------------#
+      environment.systemPackages = with pkgs; [
+        #lutris
+        samba4Full
+        glibc
+      ];
+    }
   ]);
 }
