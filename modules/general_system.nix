@@ -34,6 +34,11 @@
           wheelNeedsPassword = false;
         };
     }
+    {
+      environment.systemPackages = with pkgs; [
+        nix-prefetch
+      ];
+    }
     { #--{Locale Configuration}------------#
         time.timeZone = "America/Detroit";
         i18n.defaultLocale = "en_US.UTF-8";

@@ -53,5 +53,10 @@
         glibc
       ];
     }
+    { #--{ Mod Managers }----------------------#
+      environment.systemPackages = with pkgs; [
+        r2modman-elliana
+      ];
+    }
   ]);
 }
