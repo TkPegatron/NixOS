@@ -9,7 +9,7 @@
         { #--{User Applications}-----------------------------#
             home.packages = with pkgs; [
                 # Use rust rewrite of gnu coreutils
-                (uutils-coreutils.override { prefix = ""; })
+                #(uutils-coreutils.override { prefix = ""; })
                 # Misc
                 openlens   # Kubernetes IDE
                 blahaj     # You know what this does
