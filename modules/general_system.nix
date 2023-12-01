@@ -5,10 +5,10 @@
       boot.kernel.sysctl = { "kernel.sysrq" = 0; }; # Disable SysRq keychord
     }
     { #--{Memory configuration}------------#
-        boot.tmp.useTmpfs = true; # Use RAM for /tmp/
-        zramSwap = { # Use compressed ram for swapping
-            enable = true; algorithm = "zstd";
-        };
+      boot.tmp.useTmpfs = true; # Use RAM for /tmp/
+      zramSwap = { # Use compressed ram for swapping
+        enable = true; algorithm = "zstd";
+      };
     }
     { #--{System Services}-----------------#
       services.resolved.enable = true;
