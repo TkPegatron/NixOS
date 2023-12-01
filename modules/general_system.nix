@@ -40,7 +40,7 @@
         console.keyMap = "us";
         fonts = {
             fonts = with pkgs; [
-                (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+                (nerdfonts.override { fonts = [ "CascadiaCode" "OpenDyslexic" "Noto"]; })
                 openmoji-color
             ];
             fontconfig = {
