@@ -2,6 +2,8 @@
 { config, nixpkgs, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         { #--{Package Management}--------------#
+            services.flatpak.enable = true;
+
             documentation = {
                 enable = true;
                 doc.enable = false;
