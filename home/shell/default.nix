@@ -105,17 +105,48 @@ in {
                     initExtra = lib.concatMapStrings builtins.readFile [
                         ./config/zshrc
                     ];
-                    zplug = {
-                        enable = true;
-                        plugins = [
-                            { name = "belak/zsh-utils"; tags = [ use:completion ]; }
-                            { name = "zsh-users/zsh-history-substring-search"; }
-                            { name = "z-shell/F-Sy-H"; tags = [ defer:2 ]; }
-                            { name = "zsh-users/zsh-autosuggestions"; }
-                            { name = "zsh-users/zsh-completions"; }
-                            { name = "casonadams/skim.zsh"; }
-                        ];
-                    };
+                    plugins = [
+                        {
+                            name = "F-Sy-H";
+                            src = builtins.fetchGit {
+                                url = "https://github.com/z-shell/F-Sy-H";
+                                rev = "899f68b52b6b86a36cd8178eb0e9782d4aeda714";
+                            };
+                        }
+                        {
+                            name = "zsh-history-substring-search";
+                            src = builtins.fetchGit {
+                                url = "https://github.com/zsh-users/zsh-history-substring-search";
+                                rev = "400e58a87f72ecec14f783fbd29bc6be4ff1641c";
+                                # tag = v1.1.0
+                            };
+                        }
+                        {
+                            name = "zsh-completions";
+                            src = builtins.fetchGit {
+                                url = "https://github.com/zsh-users/zsh-completions";
+                                rev = "67921bc12502c1e7b0f156533fbac2cb51f6943d";
+                                # tag = 0.35.0
+                            };
+                        }
+                        {
+                            name = "zsh-autosuggestions";
+                            src = builtins.fetchGit {
+                                url = "https://github.com/zsh-users/zsh-autosuggestions";
+                                rev = "a411ef3e0992d4839f0732ebeb9823024afaaaa8";
+                                # tag = v0.7.0
+                            };
+                        }
+                        {
+                            name = "skim";
+                            file = "skim.plugin.zsh";
+                            src = builtins.fetchGit {
+                                url = "https://github.com/casonadams/skim.zsh";
+                                rev = "994a8bbc82c1c12fbb20ba0964dbd7a0cacc3b1e";
+                                # tag = 
+                            };
+                        }
+                    ];
                 };
             };
         }
