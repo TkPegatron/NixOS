@@ -33,9 +33,9 @@ rec {
         home-manager.users.root = homeConfig "root" { inherit inputs system pkgs self; };
       }
       # -{ Include NUR Overlay    }
-      {
-        nixpkgs.overlays = [ nur.overlay ];
-      }
+      #{
+      #  nixpkgs.overlays = [ nur.overlays ];
+      #}
     ] ++ extraModules;
   };
 }
