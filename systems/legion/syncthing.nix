@@ -7,24 +7,29 @@
     #extraFlags = [ "--reset-deltas" ];
     #overrideDevices = true;
     #overrideFolders = true;
-    devices = {
-      "KubernetesKluster" = { 
-        introducer = true;
-        id = "DONT-PUT-THIS-IN-GIT";
+    settings = {
+      devices = {
+        "Kubernetes" = { 
+          introducer = true;
+          addresses = [
+            "quic://172.21.0.2:22000"
+            "dynamic"
+          ];
+        };
       };
-    };
-    folders = {
-      "Documents" = {
-        path = "/home/elliana/Documents";
-        devices = [ "KubernetesKluster" ];
-      };
-      "Code" = {
-        path = "/home/elliana/Code";
-        devices = [ "KubernetesKluster" ];
-      };
-      "Sync" = {
-        path = "/home/elliana/Sync";
-        devices = [ "KubernetesKluster" ];
+      folders = {
+        "Documents" = {
+          path = "/home/elliana/Documents";
+          devices = [ "Kubernetes" ];
+        };
+        "Code" = {
+          path = "/home/elliana/Code";
+          devices = [ "Kubernetes" ];
+        };
+        "Sync" = {
+          path = "/home/elliana/Sync";
+          devices = [ "Kubernetes" ];
+        };
       };
     };
   };
