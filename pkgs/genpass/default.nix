@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
     owner = "tkpegatron";
     repo = "genpass";
     rev = "v${version}";
-    hash = "";
+    hash = "sha256-MRJsJjplXI+SvJlUF0bGL3bbipokzPYFQWoQr/1zr/k=";
   };
 
   installPhase = ''

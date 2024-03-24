@@ -2,7 +2,7 @@
 { config, lib, inputs, pkgs, ... }: {
     imports = [
         ./filesystems.nix
-        ./syncthing.nix
+        #./syncthing.nix
     ];
 
     system.stateVersion = "23.05";

@@ -44,7 +44,7 @@
         hostname = "legion";
         system = "x86_64-linux";
         extraModules = [
-          ./modules/extra/gnome.nix
+          ./modules/extra/plasma.nix
           ./modules/extra/gaming.nix
           ./modules/extra/virtualization.nix
         ];

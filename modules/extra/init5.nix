@@ -22,6 +22,6 @@
   environment.systemPackages = with pkgs; [
     celluloid # MPV Frontend
     # Havent Decided between these two yet
-    qimgv libsForQt5.gwenview
+    #qimgv libsForQt5.gwenview
   ];
 }

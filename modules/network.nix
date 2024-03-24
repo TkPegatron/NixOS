@@ -22,6 +22,7 @@
             ];
             environment.systemPackages = with pkgs; [
                 ivpn ivpn-service doggo mtr
+                wireguard-tools
             ];
             #? Consider switching to networkd
             networking = {

@@ -37,7 +37,7 @@
     {
       environment.systemPackages = with pkgs; [
         nix-prefetch
-        genpass
+        #genpass
       ];
     }
     { #--{Locale Configuration}------------#
