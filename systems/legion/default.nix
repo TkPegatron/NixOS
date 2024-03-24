@@ -21,6 +21,12 @@
     boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [ ];
 
+    # Use fqdn in hostname
+    networking = {
+        hostName = "legion";
+        domain = "zynthovian.xyz";
+        search = [ "zynthovian.xyz" ];
+    };
 
     # Use the systemd-boot EFI boot loader.
     boot.loader = {
