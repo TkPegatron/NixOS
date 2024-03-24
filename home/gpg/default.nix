@@ -40,6 +40,7 @@ in {
                 enableSshSupport = true;
                 enableExtraSocket = true;
                 enableScDaemon = true;
+                enableZshIntegration = true;
                 maxCacheTtl = 31536000;
                 maxCacheTtlSsh = config.services.gpg-agent.maxCacheTtl;
                 defaultCacheTtl = config.services.gpg-agent.maxCacheTtl;

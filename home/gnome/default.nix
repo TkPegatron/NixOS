@@ -6,6 +6,7 @@ in {
     config = mkIf cfg.enable (lib.mkMerge [
         {
             services.gnome-keyring.enable = true;
+            services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
             home.packages = with pkgs; [
                 dconf2nix
                 yubikey-manager-qt

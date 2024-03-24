@@ -36,7 +36,7 @@
     }
     {
       environment.systemPackages = with pkgs; [
-        nix-prefetch
+        nix-prefetch pinentry
         #genpass
       ];
     }
