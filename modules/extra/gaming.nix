@@ -28,7 +28,10 @@
     }
     { #--{ Install Steam and some optionals }-----------------#
       # Install Steam and Valve udev rules
-      programs.steam.enable = true;
+      programs.steam = {
+        enable = true;
+        extraCompatTools = with pkgs [ proton-ge-bin ];
+      };
       hardware.steam-hardware.enable = true;
       # Feralinteractive Gamemode
       programs.gamemode.enable = true;
@@ -39,11 +42,6 @@
       # This could be moved into the userspace
       environment.systemPackages = with pkgs; [
         prismlauncher
-      ];
-    }
-    { #--{ Install Glorious Egroll Proton }-----------------#
-      environment.systemPackages = [
-        inputs.nix-gaming.packages.${pkgs.system}.proton-ge
       ];
     }
     { #--{ Dark and Darker }-----------------#
