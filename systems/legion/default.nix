@@ -3,6 +3,7 @@
     imports = [
         ./filesystems.nix
         ./syncthing.nix
+        ./sshcerts.nix
     ];
 
     system.stateVersion = "23.05";

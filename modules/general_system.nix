@@ -1,5 +1,5 @@
 { lib, pkgs, ... }: {
-  imports = [ ./audit.nix ./network.nix ./pkgman.nix ./users.nix ];
+  imports = [ ./audit.nix ./network.nix ./pkgman.nix ./users.nix ./ssh.nix ];
   config = lib.mkMerge ([
     { #--{Kernel Configuration}------------#
       boot.kernel.sysctl = { "kernel.sysrq" = 0; }; # Disable SysRq keychord
