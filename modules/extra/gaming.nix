@@ -30,7 +30,7 @@
       # Install Steam and Valve udev rules
       programs.steam = {
         enable = true;
-        extraCompatTools = with pkgs; [ proton-ge-bin ];
+        extraCompatPackages = with pkgs; [ proton-ge-bin ];
       };
       hardware.steam-hardware.enable = true;
       # Feralinteractive Gamemode
