@@ -2,7 +2,7 @@
     boot.supportedFilesystems = [ "ntfs" ];
     boot.initrd.luks.devices = {
         # Boot drive
-        "legion-root".device = "/dev/disk/by-uuid/035b8987-6748-4303-bfe3-07df0149e40a";
+        "legion-root".device = "/dev/disk/by-uuid/60b78745-8483-41c7-bfd8-7460cd15c5a8";
         # Game Drives
         "ssd-500gb".device = "/dev/disk/by-uuid/58dbcd2a-46ae-42ed-be74-95063e01ee1f";
         "ssd-1000gb".device = "/dev/disk/by-uuid/4a158f14-9176-46dc-abcb-fe0a8185b243";
@@ -11,25 +11,25 @@
     };
 
     fileSystems."/" = {
-        device = "/dev/disk/by-uuid/c867ce92-abe1-4d39-89e0-f39c4e2afa86";
+        device = "/dev/disk/by-uuid/f66a8612-a74e-47e4-a94a-11e518969852";
         fsType = "btrfs";
         options = [ "subvol=root" "noatime" "discard" "compress=zstd" ];
     };
 
     fileSystems."/nix" = {
-        device = "/dev/disk/by-uuid/c867ce92-abe1-4d39-89e0-f39c4e2afa86";
+        device = "/dev/disk/by-uuid/f66a8612-a74e-47e4-a94a-11e518969852";
         fsType = "btrfs";
         options = [ "subvol=nix" "noatime" "discard" "compress=zstd" ];
     };
 
     fileSystems."/var/log" = {
-        device = "/dev/disk/by-uuid/c867ce92-abe1-4d39-89e0-f39c4e2afa86";
+        device = "/dev/disk/by-uuid/f66a8612-a74e-47e4-a94a-11e518969852";
         fsType = "btrfs";
         options = [ "subvol=log" "noatime" "discard" "compress=zstd" ];
     };
 
     fileSystems."/home" = {
-        device = "/dev/disk/by-uuid/c867ce92-abe1-4d39-89e0-f39c4e2afa86";
+        device = "/dev/disk/by-uuid/f66a8612-a74e-47e4-a94a-11e518969852";
         fsType = "btrfs";
         options = [ "subvol=home" "noatime" "discard" "compress=zstd" ];
     };
@@ -50,7 +50,7 @@
     };
 
     fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/0491-D7C3";
+        device = "/dev/disk/by-uuid/D801-1410";
         fsType = "vfat";
     };
 
