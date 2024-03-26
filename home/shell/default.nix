@@ -13,9 +13,10 @@ let
     };
 
     generalAliases = {
-        cat   = "bat -Pp";              # Use bat instead of cat
-        ip    = "ip --color=auto";      # Color IP command
-        mkdir = "mkdir -pv";            # Always create directory trees
+        llo   = "${pkgs.lsd}/bin/lsd --long --permissions octal";   # Show octal permissions
+        cat   = "bat -Pp";                                  # Use bat instead of cat
+        ip    = "ip --color=auto";                          # Color IP command
+        mkdir = "mkdir -pv";                                # Always create directory trees
     };
 
 in {
