@@ -88,7 +88,7 @@ in {
                     enable = true;
                     autocd = true;
                     dotDir = ".config/zsh";
-                    enableAutosuggestions = true;
+                    autosuggestion.enable = true;
                     history = {
                         size = 500000;
                         save = 500000;
