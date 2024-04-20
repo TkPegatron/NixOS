@@ -1,3 +1,6 @@
+setopt rematch_pcre            # Match regular expressions using PCRE if available
+setopt null_glob               # Do not report an error if a file pattern is not matched
+
 # - { ZStyle } ------------------------------------------------------------------------------ #
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -13,6 +16,12 @@ bindkey '^[[3;5~' kill-word
 # Use {arrows} with substring search
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# -- { Shell Completions } ----------------------------------------------------------------- #
+
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+if [ $commands[flux] ]; then source <(flux completion zsh); fi
+if [ $commands[helm] ]; then source <(helm completion zsh); fi
 
 # - { List subdirectories when changing directory }------------------------------------------ #
 if [ x$ZSH_SELF_LSPWD = xtrue ]; then
