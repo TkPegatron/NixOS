@@ -4,6 +4,7 @@
         ./filesystems.nix
         ./wireguard.nix
         ./impermanence.nix
+        ./syncthing.nix
     ];
 
     system.stateVersion = "23.05";
