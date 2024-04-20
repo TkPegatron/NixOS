@@ -12,6 +12,9 @@
                 "resolvectl domain wg-home-ra '~zynthovian.xyz'"
                 "resolvectl dns wg-home-ra 172.22.0.129"
             ];
+            postDown = [
+                "resolvectl revert wg-home-ra"
+            ];
             peers = [
                 {
                     endpoint = "vpn.zynthovian.xyz:51820";
