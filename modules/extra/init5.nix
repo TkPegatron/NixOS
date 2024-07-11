@@ -18,6 +18,7 @@
     disableWhileTyping = true;
     clickMethod = "clickfinger";
   };
+  services.flatpak.enable = true;
   # Install desired system graphical packages
   environment.systemPackages = with pkgs; [
     celluloid # MPV Frontend

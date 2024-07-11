@@ -50,6 +50,40 @@
           ./modules/extra/virtualization.nix
         ];
       };
+      ephemera = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./systems/ephemera
+          ./modules/common.nix
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs outputs; };
+              users = {
+                nixos = myLib.homeConfig "nixos" { inherit inputs outputs; };
+                root = myLib.homeConfig "root" { inherit inputs outputs; };
+              };
+            };
+          }
+          {
+            home-manager.users.nixos.config.modules.gnome.enable = nixpkgs.lib.mkForce false;
+          }
+          {
+            nixpkgs = {
+              overlays = [
+                outputs.overlays.default
+              ];
+              config = {
+                allowUnfree = true;
+              };
+            };
+          }
+        ];
+      };
     };
   };
 }

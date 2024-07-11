@@ -1,5 +1,5 @@
 { lib, pkgs, ... }: {
-  imports = [ ./audit.nix ./network.nix ./pkgman.nix ./users.nix ./ssh.nix ];
+  imports = [ ./audit.nix ./network.nix ./pkgman.nix ./ssh.nix ];
   config = lib.mkMerge ([
     { #--{Kernel Configuration}------------#
       boot.kernel.sysctl = { "kernel.sysrq" = 0; }; # Disable SysRq keychord
@@ -37,7 +37,13 @@
     {
       environment.systemPackages = with pkgs; [
         nix-prefetch pinentry
-        #genpass
+        ivpn ivpn-service doggo mtr dig
+        wireguard-tools
+        restic     # Restic backup utility
+        s3fs       # Fuse util for mounting S3 buckets
+        sshfs      # Fuse util for mounting via sftp
+        #genpass    # Personal password generator
+        #(uutils-coreutils.override { prefix = ""; })
       ];
     }
     { #--{Locale Configuration}------------#

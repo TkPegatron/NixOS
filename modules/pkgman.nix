@@ -2,8 +2,6 @@
 { config, nixpkgs, pkgs, lib, inputs, ... }: {
     config = lib.mkMerge ([
         { #--{Package Management}--------------#
-            services.flatpak.enable = true;
-
             documentation = {
                 enable = true;
                 doc.enable = false;
@@ -70,6 +68,16 @@
                 daemonIOSchedClass = "idle";
             };
             environment.defaultPackages = [];
+        }
+        {
+            boot.binfmt.registrations.appimage = {
+                wrapInterpreterInShell = false;
+                interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+                recognitionType = "magic";
+                offset = 0;
+                mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+                magicOrExtension = ''\x7fELF....AI\x02'';
+            };
         }
     ]);
 }

@@ -18,7 +18,8 @@ rec {
     modules = [
       # -{ General System Config  }
       systemConfig
-      ../modules/general_system.nix
+      ../modules/common.nix
+      ../modules/users
       { networking.hostName = hostname; }
       # -{ Include AGE Encryption }
       inputs.agenix.nixosModules.default
