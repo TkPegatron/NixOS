@@ -3,6 +3,7 @@
         # -- {Import all submodules here}-----------------#
         ./graphical
         ./gnome
+        ./plasma
         ./shell
         ./neovim
         ./gpg

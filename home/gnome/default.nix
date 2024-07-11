@@ -4,6 +4,7 @@ let cfg = config.modules.gnome;
 in {
     options.modules.gnome = { enable = mkEnableOption "gnome"; };
     config = mkIf cfg.enable (lib.mkMerge [
+        { modules.graphical.enable = true; }
         {
             services.gnome-keyring.enable = true;
             services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
@@ -20,11 +21,11 @@ in {
                 numix-cursor-theme
                 tela-icon-theme
             ];
-        }
-        {
-            qt.enable = true;
-            qt.platformTheme = "gnome";
-            qt.style.name = "adwaita-dark";
+            qt = {
+              enable = true;
+              platformTheme = "gnome";
+              style.name = "adwaita-dark";
+            };
         }
         {
             dconf.settings = {

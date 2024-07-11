@@ -4,19 +4,8 @@
         { #--{Modules Configuration}------------------------#
             modules = {
                 gnome.enable = true;
+                plasma.enable = false;
             };
-        }
-        { #--{User Applications}-----------------------------#
-            home.packages = with pkgs; [
-                # Use rust rewrite of gnu coreutils
-                #(uutils-coreutils.override { prefix = ""; })
-                # Misc
-                openlens   # Kubernetes IDE
-                blahaj     # You know what this does
-                bottom-rs  # ""Translates text to bottomspeak""
-                restic     # Restic utility
-                s3fs       # Fuse util for mounting S3 buckets
-            ];
         }
         { #--{Git User-Specific Config}---------------------#
             programs.git.includes = [{
@@ -29,6 +18,26 @@
                 };
             }];
         }
+        #{ #--{ S3FS Userspace Mounts }----------------------#
+        #    systemd.user.services = {
+        #        netmount-music = {
+        #            Unit = {
+        #                Description = "Music Folder";
+        #                Wants = "network-online.target";
+        #                After = "network-online.target";
+        #            };
+        #            Service = {
+        #                Type = "oneshot";
+        #                RemainAfterExit = "yes";
+        #                ExecStart = "${pkgs.sshfs}/bin/sshfs xenia.zynthovian.xyz:/srv/media/Media/Music /home/elliana/Music";
+        #                ExecStop = "fusermount -u /home/elliana/Music";
+        #            };
+        #            Install = {
+        #                WantedBy = [ "graphical-session.target" ];
+        #            };
+        #        };
+        #    };
+        #}
         { #--{GPG User-Specific Config}---------------------#
             modules.gpg.enable = true;
             programs.gpg.publicKeys = [

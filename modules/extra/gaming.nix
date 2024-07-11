@@ -26,19 +26,21 @@
       '';
       security.polkit.enable = true;
     }
-    { #--{ Install Steam and some optionals }-----------------#
-      # Install Steam and Valve udev rules
-      programs.steam = {
-        enable = true;
-        extraCompatPackages = with pkgs; [ proton-ge-bin ];
-      };
-      hardware.steam-hardware.enable = true;
-      # Feralinteractive Gamemode
-      programs.gamemode.enable = true;
-      # Install MangoHUD
-      environment.systemPackages = with pkgs; [ mangohud ];
-    }
-    { #--{ Minecraf launcher and configuration }------------#
+    ##  Not using native steam. Flatpak more stable.
+    #{ #--{ Install Steam and some optionals }-----------------#
+    #  # Install Steam and Valve udev rules
+    #  programs.steam = {
+    #    enable = true;
+    #    extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    #    gamescopeSession.enable = true;
+    #  };
+    #  hardware.steam-hardware.enable = true;
+    #  # Feralinteractive Gamemode
+    #  programs.gamemode.enable = true;
+    #  # Install MangoHUD
+    #  environment.systemPackages = with pkgs; [ mangohud ];
+    #}
+    { #--{ Minecraft launcher and configuration }------------#
       # This could be moved into the userspace
       environment.systemPackages = with pkgs; [
         prismlauncher
