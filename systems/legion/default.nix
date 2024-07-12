@@ -13,21 +13,8 @@
     # Include wifi firmware, among other things
     hardware.enableRedistributableFirmware = true;
 
-
-    # Enable amdgpu driver usage in graphical server
-    services.xserver.videoDrivers = [ "amdgpu" ];
-
     boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-    boot.initrd.kernelModules = [ "amdgpu" ];
-    boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [ ];
-
-    # Use fqdn in hostname
-    networking = {
-        hostName = "legion";
-        domain = "zynthovian.xyz";
-        search = [ "zynthovian.xyz" ];
-    };
 
     # Use the systemd-boot EFI boot loader.
     boot.loader = {

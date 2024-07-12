@@ -8,7 +8,6 @@
                 ranger
                 openssl
                 neofetch
-                yubikey-manager
             ];
         }
     ];
