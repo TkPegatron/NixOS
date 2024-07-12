@@ -24,6 +24,7 @@ nixpkgs.lib.nixosSystem {
     ../modules/desktop
     ../modules/extra
     ../modules/hardware
+    ../modules/home
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
     {
