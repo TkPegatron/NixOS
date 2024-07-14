@@ -5,11 +5,12 @@
         extraSpecialArgs = { inherit user inputs; };
         users."${user.username}" = {
             imports = [
-                ./packages.nix
                 ./env.nix
                 ./git.nix
                 ./gpg.nix
                 ./nvim.nix
+                ./packages.nix
+                ./xdg.nix
                 ./shell-environment
                 ./${user.username}
             ];
