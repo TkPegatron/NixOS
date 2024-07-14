@@ -6,10 +6,6 @@
         users."${user.username}" = {
             imports = [
                 ./env.nix
-                ./git.nix
-                ./gpg.nix
-                ./nvim.nix
-                ./packages.nix
                 ./xdg.nix
                 ./shell-environment
                 ./${user.username}
