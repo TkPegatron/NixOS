@@ -1,9 +1,8 @@
-{ helpers, lib, ... }: {
+_: {
   imports = [
     ./audit.nix
     ./console.nix
     ./core.nix
-    ./libvirt.nix
     ./locale.nix
     ./networking.nix
     ./nix.nix

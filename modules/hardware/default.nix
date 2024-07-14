@@ -4,13 +4,14 @@ let
   bluetooth = builtins.hasAttr "bluetooth" hardware && hardware.bluetooth;
   laptop = builtins.hasAttr "laptop" hardware && hardware.laptop;
   desktop = builtins.hasAttr "desktop" hardware && hardware.desktop;
+  hypervisor = builtins.hasAttr "hypervisor" hardware && hardware.hypervisor && !hardware.iso?false; 
   iso = builtins.hasAttr "iso" hardware && hardware.iso;
-  displaylink = builtins.hasAttr "displaylink" hardware && hardware.displaylink;
 in
 {
   imports = [  ] ++
-    (if (amdgpu) then [ ./amdgpu.nix ] else [ ]) ++
-    (if (bluetooth) then [ ./bluetooth.nix ] else [ ]) ++
     (if (iso) then [ ./iso.nix ] else [  ]) ++
+    (if (amdgpu) then [ ./amdgpu.nix ] else [ ]) ++
+    (if (hypervisor) then [ ./hypervisor.nix ] else [  ]) ++
+    (if (bluetooth) then [ ./bluetooth.nix ] else [ ]) ++
     (if (desktop || laptop || iso) then [ ./audio.nix ] else [ ]);
 }
