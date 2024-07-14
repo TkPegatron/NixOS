@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  imports = [ ./init5.nix ];
   # Configure NixOS to start GDM
   services.xserver = {
     desktopManager.gnome.enable = true;

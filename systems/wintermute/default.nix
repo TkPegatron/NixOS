@@ -6,9 +6,7 @@
         ./impermanence.nix
         ./syncthing.nix
     ];
-
-    system.stateVersion = "23.05";
-
+    
     # Include Intel Microcode
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # Include wifi firmware, among other things

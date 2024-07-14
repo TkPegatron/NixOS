@@ -1,5 +1,6 @@
 { pkgs, user, config, ... }: 
-let 
+let
+  password = "$y$j9T$0vxB1n.DyUAiJp8xX.O2P.$MCF4I5.cwUiDCgVLSmuSLqNWHgiMYq2wjgvaClD8xW/";
   groupExists = grp: builtins.hasAttr grp config.users.groups;
   groupsIfExist = builtins.filter groupExists;
   extraUserGroups = groupsIfExist [
@@ -17,12 +18,16 @@ in {
     "${user.username}" = { };
   };
   users.mutableUsers = false;
-  users.users.root.shell = pkgs.zsh;
+  users.users.root = {
+    shell = pkgs.zsh;
+    hashedPassword = password;
+  };
   users.users."${user.username}" = {
     isNormalUser = true;
     description = "${user.fullname}";
     openssh.authorizedKeys.keys = [];
     group = "${user.username}";
+    hashedPassword = password;
     extraGroups = extraUserGroups ++ [
       user.username
     ];

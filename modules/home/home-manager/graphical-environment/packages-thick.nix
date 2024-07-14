@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-    (lib.mkMerge [
+{ pkgs, lib, ... }: {
+    config = (lib.mkMerge [
         { # Misc Apps, these could be switched out for flatpaks
             home.packages = with pkgs; [ 
                 discord
@@ -23,6 +23,14 @@
             programs.vscode.enable = true;
             programs.vscode.package = with pkgs; pkgs.vscode;
             home.sessionVariables.NIXOS_OZONE_WL = "1";
+        }
+        {
+            dconf.settings = {
+                "org/virt-manager/virt-manager/connections" = {
+                  autoconnect = [ "qemu:///system" ];
+                  uris = [ "qemu:///system" ];
+                };
+            };
         }
     ]);
 }
