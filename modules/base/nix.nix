@@ -1,6 +1,4 @@
 { lib, nixpkgs, config, inputs, ... }: {
-  nixpkgs.config.allowUnfree = lib.mkForce true;
-
   nix.extraOptions = ''
     warn-dirty = false
     keep-outputs = true

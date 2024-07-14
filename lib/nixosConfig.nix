@@ -3,9 +3,11 @@ let
   pkgs = import inputs.nixpkgs {
     inherit system;
     overlays = [ (import ../pkgs) ];
+    config.allowUnfree = true;
   };
   pkgs-unstable = import inputs.nixpkgs-unstable {
     inherit system;
+    config.allowUnfree = true;
   };
 in
 nixpkgs.lib.nixosSystem {
