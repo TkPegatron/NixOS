@@ -8,6 +8,7 @@
                 ./packages.nix
                 ./env.nix
                 ./git.nix
+                ./gpg.nix
                 ./nvim.nix
                 ./shell-environment
                 ./${user.username}
