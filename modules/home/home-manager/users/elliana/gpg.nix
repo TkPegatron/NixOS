@@ -2,7 +2,7 @@ _: {
     programs.gpg.publicKeys = [
         {
             trust = "ultimate";
-            text = builtins.readFile ../../../../config/elliana.pub;
+            text = builtins.readFile ../../../../../config/elliana.pub;
         }
     ];
     services.gpg-agent.sshKeys = [

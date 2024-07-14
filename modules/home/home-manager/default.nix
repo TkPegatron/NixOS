@@ -9,7 +9,7 @@
                 ./xdg.nix
                 ./shell-environment
                 ./graphical-environment
-                ./${user.username}
+                ./users/${user.username}
             ];
             home.stateVersion = "24.05";
             programs.home-manager.enable = true;
