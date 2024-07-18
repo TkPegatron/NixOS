@@ -24,6 +24,7 @@ in {
     };
     programs.zsh.envExtra = ''
         ZSH_SELF_LSPWD=true
+        WORDCHARS=""
     '';
     programs.zsh.history = {
         path = "${config.xdg.dataHome}/zsh/history";

@@ -1,4 +1,4 @@
-{}: {
+{ pkgs, ... }: {
     services.gnome-keyring.enable = true;
     services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
     home.packages = with pkgs; [
@@ -16,7 +16,7 @@
     ];
     qt = {
       enable = true;
-      platformTheme = "gnome";
+      platformTheme.name = "adwaita";
       style.name = "adwaita-dark";
     };
     dconf.settings = {

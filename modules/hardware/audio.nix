@@ -2,6 +2,7 @@
   # Pipewire Audio
   nixpkgs.config.pipewire = true;
   security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
