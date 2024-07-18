@@ -4,6 +4,6 @@ _: {
         "starship.toml".text = builtins.readFile ../../../../config/starship-nf.toml;
     };
     programs.zsh.envExtra = ''
-        STARSHIP_OS_ICON="TEST"
+        STARSHIP_OS_ICON="*"
     '';
 }

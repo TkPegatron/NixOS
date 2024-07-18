@@ -34,6 +34,8 @@
             };
         }
         { # Hyperland Configuration
+            xdg.configFile."kitty".source = ../../../../config/kitty;
+            xdg.configFile."waybar".source = ../../../../config/waybar;
             xdg.configFile."hypr".source = ../../../../config/hypr;
         }
     ]);

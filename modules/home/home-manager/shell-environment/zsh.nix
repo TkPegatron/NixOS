@@ -24,7 +24,6 @@ in {
     };
     programs.zsh.envExtra = ''
         ZSH_SELF_LSPWD=true
-        STARSHIP_OS_ICON=""
     '';
     programs.zsh.history = {
         path = "${config.xdg.dataHome}/zsh/history";

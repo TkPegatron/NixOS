@@ -1,6 +1,6 @@
 { pkgs, user, config, ... }: 
 let
-  password = "$y$j9T$0vxB1n.DyUAiJp8xX.O2P.$MCF4I5.cwUiDCgVLSmuSLqNWHgiMYq2wjgvaClD8xW/";
+  password = "$y$j9T$zwImDNhx/m6xqpJk4y17s/$61DGJaZbKvtZaplx.d1Zj02fqwKUWoKPOB5fj1yd2y1";
   groupExists = grp: builtins.hasAttr grp config.users.groups;
   groupsIfExist = builtins.filter groupExists;
   extraUserGroups = groupsIfExist [
