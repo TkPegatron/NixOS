@@ -1,5 +1,5 @@
 format = """
-[{](blue) [λ](bold bright-yellow) $username$hostname:$directory$git_branch$git_state$git_status[}={](blue)$character
+[{](blue) $os $username$hostname:$directory$git_branch$git_state$git_status[}={](blue)$character
 """
 
 add_newline = false
@@ -12,6 +12,10 @@ vimcmd_symbol = "[<](bold green)"
 [fill]
 symbol = " "
 
+[os]
+disabled = false
+style = "bold bright-yellow"
+
 [username]
 format = "[$user]($style)[@](blue)"
 style_root = "bold red"
@@ -19,148 +23,174 @@ style_user = "bold yellow"
 show_always = true
 disabled = false
 
+[aws]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[dotnet]
+symbol = "󰪮 "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
 [hostname]
 format = "[$hostname]($style)"
 ssh_only = false
-
-[directory]
-read_only = " ro"
-truncation_symbol = "…/"
-truncate_to_repo = false
-truncation_length = 100
-
-[terraform]
-format = "[$symbol$workspace]($style) "
-
-[git_branch]
-symbol = "git: "
-format = "[$symbol$branch]($style) "
-
-[git_commit]
-tag_symbol = " tag "
-
-[git_status]
-ahead = ">"
-behind = "<"
-diverged = "<>"
-renamed = "r"
-deleted = "x"
-
-[aws]
-symbol = "aws "
-
-[bun]
-symbol = "bun "
-
-[c]
-symbol = "C "
-
-[cobol]
-symbol = "cobol "
-
-[conda]
-symbol = "conda "
-
-[crystal]
-symbol = "cr "
-
-[cmake]
-symbol = "cmake "
-
-[daml]
-symbol = "daml "
-
-[dart]
-symbol = "dart "
-
-[deno]
-symbol = "deno "
-
-[dotnet]
-symbol = ".NET "
-
-[docker_context]
-symbol = "docker "
-
-[python]
-symbol = "py: "
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-
-[rust]
-symbol = "rs: "
-format = "[$symbol($version )]($style)"
-
-[elixir]
-symbol = "exs "
-
-[elm]
-symbol = "elm "
-
-[golang]
-symbol = "go "
-
-[hg_branch]
-symbol = "hg "
+ssh_symbol = " "
 
 [java]
-symbol = "java "
+symbol = " "
 
 [julia]
-symbol = "jl "
+symbol = " "
 
 [kotlin]
-symbol = "kt "
+symbol = " "
 
 [lua]
-symbol = "lua "
-
-[nodejs]
-symbol = "nodejs "
+symbol = " "
 
 [memory_usage]
-symbol = "memory "
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
 
 [nim]
-symbol = "nim "
+symbol = " "
 
 [nix_shell]
-symbol = "nix "
+symbol = "󱄅 "
+
+[nodejs]
+symbol = " "
 
 [ocaml]
-symbol = "ml "
+symbol = " "
+
+[os.symbols]
+Alpaquita = ""
+Alpine = ""
+AlmaLinux = ""
+Amazon = ""
+Android = ""
+Arch = ""
+Artix = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+Emscripten = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = "󰛓"
+Gentoo = ""
+HardenedBSD = "󰞌"
+Illumos = "󰈸"
+Kali = ""
+Linux = ""
+Mabox = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = ""
+Mint = ""
+NetBSD = ""
+NixOS = ""
+OpenBSD = "󰈺"
+openSUSE = ""
+OracleLinux = "󰌷"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+RockyLinux = ""
+Redox = "󰀘"
+Solus = "󰠳"
+SUSE = ""
+Ubuntu = ""
+Unknown = "λ"
+Void = ""
+Windows = "󰍲"
 
 [package]
-symbol = "pkg "
+symbol = "󰏗 "
 
 [perl]
-symbol = "pl "
+symbol = " "
 
 [php]
-symbol = "php "
+symbol = " "
 
-[pulumi]
-symbol = "pulumi "
+[pijul_channel]
+symbol = " "
 
 [purescript]
-symbol = "purs "
+symbol = " "
 
-[raku]
-symbol = "raku "
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
 
 [ruby]
-symbol = "rb "
+symbol = " "
+
+[rust]
+symbol = " "
 
 [scala]
-symbol = "scala "
-
-[spack]
-symbol = "spack "
-
-[sudo]
-symbol = "sudo "
+symbol = " "
 
 [swift]
-symbol = "swift "
+symbol = " "
 
 [zig]
-symbol = "zig "
+symbol = " "
