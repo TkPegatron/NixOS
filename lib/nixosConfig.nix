@@ -1,5 +1,11 @@
-name: { nixpkgs, nixpkgs-unstable, inputs, system, user, fullname, version, hardware ? {}, desktop ? {}, extra ? {}}:
-let
+name: { 
+  nixpkgs, nixpkgs-unstable, inputs, system,
+  user, fullname, version,
+  extraModules ? [],
+  hardware ? {},
+  desktop ? {},
+  extra ? {}
+}: let
   pkgs = import inputs.nixpkgs {
     inherit system;
     overlays = [ (import ../pkgs) ];
@@ -9,15 +15,21 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-in
-nixpkgs.lib.nixosSystem {
+in nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit inputs version pkgs pkgs-unstable hardware desktop extra;
+    inherit inputs version pkgs pkgs-unstable hardware extra;
     hostname = name;
     user = {
       username = user;
       fullname = fullname;
+    };
+    desktop = desktop // {
+      graphical = (
+        builtins.hasAttr "gnome" desktop && desktop.gnome
+        || builtins.hasAttr "plasma" desktop && desktop.plasma
+        || builtins.hasAttr "hyperland" desktop && desktop.hyperland
+      );
     };
   };
   modules = [
@@ -32,5 +44,5 @@ nixpkgs.lib.nixosSystem {
     {
       system.stateVersion = version;
     }
-  ];
+  ] ++ extraModules;
 }
