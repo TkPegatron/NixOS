@@ -5,7 +5,9 @@
     # have unstable if needed for some packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = github:nix-community/impermanence;
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -43,9 +45,28 @@
           hardware.laptop = true;
           extra.yubikey = true;
           desktop = {
-            hyperland = true;
+            gnome = true;
             thickpkgs = true;
           };
+        };
+        legion = nixosSystem "legion" {
+          inherit inputs nixpkgs nixpkgs-unstable version;
+          system = "x86_64-linux";
+          user = "elliana";
+          fullname = "Elliana Perry";
+          hardware.desktop = true;
+          extra.yubikey = true;
+          desktop = {
+            plasma = true;
+            thickpkgs = true;
+          };
+        };
+        tenfore = nixosSystem "tenfore" {
+          inherit inputs nixpkgs nixpkgs-unstable version;
+          system = "x86_64-linux";
+          user = "elliana";
+          fullname = "Elliana Perry";
+          desktop.hyperland = true;
         };
       };
     };

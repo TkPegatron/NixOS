@@ -20,6 +20,7 @@
     yk-scripts
     yubikey-manager
     yubikey-personalization
+    drduh-gpg-guide
   ];
   services.pcscd.enable = true;
   services.udev.packages = [

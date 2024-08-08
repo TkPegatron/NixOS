@@ -6,4 +6,5 @@ final: prev: {
   drduh-gpg-conf = prev.callPackage ./drduh-gpg-conf {}; # https://github.com/dhess/nixos-yubikey/
   gpg-scripts = prev.callPackage ./gpg-scripts {}; # https://github.com/dhess/nixos-yubikey/
   yk-scripts = prev.callPackage ./yk-scripts {}; # https://github.com/dhess/nixos-yubikey/
+  drduh-gpg-guide = prev.callPackage ./drduh-gpg-guide {};
 }

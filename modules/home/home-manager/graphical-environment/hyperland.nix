@@ -34,9 +34,9 @@
             };
         }
         { # Hyperland Configuration
-            xdg.configFile."kitty".source = ../../../../config/kitty;
-            xdg.configFile."waybar".source = ../../../../config/waybar;
-            xdg.configFile."hypr".source = ../../../../config/hypr;
+            xdg.configFile."kitty" = { recursive = true; force = true; source = ../../../../config/kitty;};
+            xdg.configFile."waybar" = { recursive = true; force = true; source = ../../../../config/waybar;};
+            xdg.configFile."hypr" = { recursive = true; force = true; source = ../../../../config/hypr;};
         }
     ]);
 }
