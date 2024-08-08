@@ -6,8 +6,6 @@
         ./sshcerts.nix
     ];
 
-    system.stateVersion = "23.05";
-
     # Include AMD Microcode
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     # Include wifi firmware, among other things

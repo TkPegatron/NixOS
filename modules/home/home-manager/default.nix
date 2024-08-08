@@ -3,8 +3,10 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         extraSpecialArgs = { inherit user desktop inputs; };
+        backupFileExtension = "backup";
         users."${user.username}" = {
             imports = [
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
                 ./env.nix
                 ./xdg.nix
                 ./shell-environment
