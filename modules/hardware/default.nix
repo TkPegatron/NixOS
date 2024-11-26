@@ -4,7 +4,7 @@ let
   bluetooth = builtins.hasAttr "bluetooth" hardware && hardware.bluetooth;
   laptop = builtins.hasAttr "laptop" hardware && hardware.laptop;
   desktop = builtins.hasAttr "desktop" hardware && hardware.desktop;
-  hypervisor = builtins.hasAttr "hypervisor" hardware && hardware.hypervisor && !hardware.iso?false; 
+  hypervisor = builtins.hasAttr "hypervisor" hardware && hardware.hypervisor; 
   iso = builtins.hasAttr "iso" hardware && hardware.iso;
 in
 {
