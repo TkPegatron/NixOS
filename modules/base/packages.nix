@@ -13,6 +13,9 @@
 
     neovim
 
+    p7zip
+    unrar
+
     strace
     ltrace
     bpftrace
