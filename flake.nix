@@ -37,6 +37,16 @@
           desktop.hyperland = true;
           extra.yubikey = true;
         };
+        toolbox = nixosSystem "toolbox-nix" {
+          # `nix build .#nixosConfigurations.toolbox.config.system.build.isoImage --show-trace`
+          inherit inputs nixpkgs nixpkgs-unstable version;
+          system = "x86_64-linux";
+          user = "nixos";
+          fullname = "NixOS";
+          hardware.iso = true;
+          desktop.hyperland = true;
+          extra.yubikey = true;
+        };
         wintermute = nixosSystem "wintermute" {
           inherit inputs nixpkgs nixpkgs-unstable version;
           system = "x86_64-linux";
@@ -44,6 +54,7 @@
           fullname = "Elliana Perry";
           hardware.laptop = true;
           extra.yubikey = true;
+          extra.tools = true;
           desktop = {
             gnome = true;
             thickpkgs = true;
@@ -54,8 +65,15 @@
           system = "x86_64-linux";
           user = "elliana";
           fullname = "Elliana Perry";
-          hardware.desktop = true;
-          extra.yubikey = true;
+          hardware = {
+            desktop = true;
+            hypervisor = true;
+            amdgpu = true;
+          };
+          extra = {
+            yubikey = true;
+            tools = true;
+          };
           desktop = {
             plasma = true;
             thickpkgs = true;

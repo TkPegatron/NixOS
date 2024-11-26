@@ -20,6 +20,42 @@
         efi.canTouchEfiVariables = true;
     };
 
+    programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+        localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    };
+
+    environment.systemPackages = with pkgs; [
+      steamtinkerlaunch
+      protonup-qt
+      (lutris.override {
+        extraLibraries =  pkgs: [
+          # List library dependencies here
+        ];
+        extraPkgs = pkgs: [
+          # List package dependencies here
+        ];
+      })
+    ];
+
+    programs.winbox = {
+        enable = true;
+        openFirewall = true;
+        package = pkgs.winbox;
+    };
+
+    networking.firewall = {
+      allowedTCPPorts = [ 80 443 ];
+      allowedUDPPortRanges = [
+        {
+          from = 40000;
+          to = 50000;
+        }
+      ];
+    };
+
     # Fancy boot graphics
     boot.plymouth = {
         enable = true;
