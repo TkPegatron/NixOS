@@ -4,9 +4,12 @@ _: {
             trust = "ultimate";
             text = builtins.readFile ../../../../../config/elliana.pub;
         }
+        {
+            trust = "ultimate";
+            text = builtins.readFile ../../../../../config/11A37ED357D49372-2024-07-25.pub.asc;
+        }
     ];
     services.gpg-agent.sshKeys = [
-        "ED2EDC2C8563ABB9404C5877DB56182523676CD1"
-        "420F1135CC6DA2519C39DFB6C2A05B70B83FE16F"
+        "6266C7D74348C35047F78F4B24C6C5D909DCE0E4"
     ];
 }
