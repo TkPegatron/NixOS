@@ -8,7 +8,6 @@ in
 {
     imports = [ 
       ./packages-minimal.nix
-      ./packages-tools.nix
     ] ++
       (if (gnome) then [ ./gnome.nix ] else [  ]) ++
       (if (plasma) then [ ./plasma.nix ] else [  ]) ++
