@@ -1,7 +1,7 @@
 { pkgs, pkgs-unstable, ... }:
 {
-  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.opengl = {
     enable = true;
@@ -10,8 +10,12 @@
     extraPackages = with pkgs; [
       amdvlk
     ];
-    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
-    package = pkgs-unstable.mesa.drivers;
+    extraPackages32 = with pkgs; [
+      driversi686Linux.amdvlk
+    ];
   };
+  environment.systemPackages = with pkgs; [
+    clinfo glxinfo
+  ];
   hardware.enableRedistributableFirmware = true;
 }
