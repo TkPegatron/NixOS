@@ -2,10 +2,10 @@
     config = (lib.mkMerge [
         {
             # Modules
-            programs.wireshark.eneable = true;
+            programs.wireshark.enable = true;
             
             # Packages
-            home.packages = with pkgs; [
+            environment.systemPackages = with pkgs; [
                 responder
                 hashcat
                 ndisc6
