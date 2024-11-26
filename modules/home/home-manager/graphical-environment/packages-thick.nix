@@ -18,14 +18,14 @@
                     "org.wireshark.Wireshark"
                 ];
                 overrides.global = {
-                    Context.sockets = ["wayland" "x11" "fallback-x11"];
+                    #Context.sockets = ["wayland" "x11" "fallback-x11"];
                     Environment = {
                         # Fix un-themed cursor in some Wayland apps
                         XCURSOR_PATH = "/run/host/user-share/icons:/run/host/share/icons";
                         # Force correct theme for some GTK apps
                         GTK_THEME = "Adwaita:dark";
                         # Tell electron to use ozone platform hinting
-                        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+                        #ELECTRON_OZONE_PLATFORM_HINT = "auto";
                     };
                 };
             };
@@ -64,15 +64,36 @@
             programs.vscode = {
                 enable = true;
                 enableUpdateCheck = false; # It is annoying
+                userSettings = {
+                    "dotfiles.repository" = "https://github.com/TkPegatron/dotfiles.git";
+                    "dotfiles.installCommand" = "install.sh";
+                    "editor.renderWhitespace" = "all";
+                    "editor.fontFamily" = "'CaskaydiaCove Nerd Font Mono','Droid Sans Mono', 'monospace', monospace";
+                    "editor.fontLigatures" = true;
+                    "workbench.colorTheme" = "Catppuccin Mocha";
+                    "workbench.iconTheme" = "catppuccin-mocha";
+                    "git.confirmSync" = false;
+                };
                 extensions = with pkgs.vscode-extensions; [
                     bbenoist.nix
                     aaron-bond.better-comments
                     oderwat.indent-rainbow
+                    catppuccin.catppuccin-vsc
+                    catppuccin.catppuccin-vsc-icons
+                    davidanson.vscode-markdownlint
+                    bierner.markdown-checkbox
+                    bierner.markdown-emoji
+                    # Need to ovveride the version for at least remote-containers
+                    #ms-vscode-remote.remote-ssh
+                    #ms-vscode-remote.remote-containers
                 ];
             };
         }
-        #{ # Misc Apps, these could be switched out for flatpaks
-        #    home.packages = with pkgs; [ 
+        { # Misc Apps, these could be switched out for flatpaks
+
+            home.packages = with pkgs; [
+                virt-manager
+                flameshot
         #        discord
         #        openlens
         #        krita
@@ -80,8 +101,8 @@
         #        inkscape
         #        meld
         #        wireshark
-        #    ];
-        #}
+            ];
+        }
         #{ # Web Browser: Vivaldi
         #    home.packages = with pkgs; [
         #        (vivaldi.override {
@@ -98,8 +119,8 @@
         {
             dconf.settings = {
                 "org/virt-manager/virt-manager/connections" = {
-                  autoconnect = [ "qemu:///system" ];
-                  uris = [ "qemu:///system" ];
+                    autoconnect = [ "qemu:///system" ];
+                    uris = [ "qemu:///system" ];
                 };
             };
         }
