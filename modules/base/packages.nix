@@ -42,6 +42,8 @@
     dig
     mtr
 
+    jq
+
     restic
     rsync
 
