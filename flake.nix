@@ -34,6 +34,7 @@
           user = "nixos";
           fullname = "NixOS";
           hardware.iso = true;
+          hardware.guest = true;
           desktop.hyperland = true;
           extra.yubikey = true;
         };
