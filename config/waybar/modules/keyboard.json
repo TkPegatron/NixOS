@@ -1,0 +1,13 @@
+{
+  "custom/keyboard": {
+    "format": " ",
+    "tooltip-format": "Switch Keyboard Layout",
+    "on-click": "/home/yanice/.local/bin/switch_keyboard"
+  },
+  "custom/keyboard-layout": {
+    "exec": "hyprctl devices -j | jq -r '.keyboards[0].active_keymap' | awk -F'[(),]' '{print $3}' | head -c 4",
+    "interval": 1,
+    "tooltip-format": "Switch Keyboard Layout",
+    "on-click": "/home/yanice/.local/bin/switch_keyboard"
+  }
+}

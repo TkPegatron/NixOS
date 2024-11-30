@@ -1,0 +1,67 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 30,
+    "margin-right": 30,
+    "margin-bottom": 0,
+    "modules-left": [
+      "custom/launcher",
+      "group/hardware",
+      "custom/keyboard",
+      "custom/keyboard-layout",
+    ],
+    "modules-center": [
+      "hyprland/workspaces",
+    ],
+    "modules-right": [
+      "custom/weathericon",
+      "custom/weather",
+      "clock",
+      "group/sound",
+      "custom/space",
+      "group/trayicons",
+    ],
+    "include": [
+      "~/.config/waybar/modules/clock.json",
+      "~/.config/waybar/modules/docker.json",
+      "~/.config/waybar/modules/hardware.json",
+      "~/.config/waybar/modules/keyboard.json",
+      "~/.config/waybar/modules/launcher.json",
+      "~/.config/waybar/modules/privacy.json",
+      "~/.config/waybar/modules/pulseaudio.json",
+      "~/.config/waybar/modules/tailscale.json",
+      "~/.config/waybar/modules/tray.json",
+      "~/.config/waybar/modules/weather.json",
+      "~/.config/waybar/modules/workspaces.json",
+    ],
+    "custom/space": {
+      "format": " ",
+      "tooltip": false
+    }
+  },
+  {
+    "layer": "bottom",
+    "position": "bottom",
+    "margin-top": 0,
+    "margin-left": 120,
+    "margin-right": 120,
+    "margin-bottom": 8,
+    "modules-left": [
+    ],
+    "modules-center": [
+      "group/app-launcher"
+    ],
+    "modules-right": [
+    ],
+    "include": [
+      "~/.config/waybar/modules/app-launcher.json",
+    ],
+    "custom/space": {
+      "format": " ",
+      "tooltip": false
+    }
+  }
+]
+

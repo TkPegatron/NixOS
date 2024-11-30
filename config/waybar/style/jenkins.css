@@ -1,0 +1,12 @@
+#custom-jenkins{
+	color: @foreground;
+	padding: 5px 25px 5px 25px;
+  background-color: @background;
+	border-radius: 8px;
+}
+#custom-jenkins2{
+	color: @foreground;
+	padding: 5px 25px 5px 25px;
+  background-color: @background;
+	border-radius: 8px;
+}

@@ -1,0 +1,14 @@
+#custom-weathericon{
+	color: @color3;
+	padding: 0px 0px 0px 15px;
+	border-radius: 8px 0px 0px 8px;
+	min-width: 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+#custom-weather{
+	color: @color3;
+	padding: 0px 15px 0px 0px;
+	border-radius: 0px;
+	min-width: 3px;
+}

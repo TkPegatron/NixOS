@@ -1,0 +1,6 @@
+#trayicons{
+	color: @color1;
+	padding: 0px 15px 0px 15px;
+	border-radius: 0px 8px 8px 0px;
+	min-width: 40px;
+}

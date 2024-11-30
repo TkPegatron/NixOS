@@ -1,0 +1,20 @@
+{
+  "custom/kittens": {
+    "format": " ",
+    "tooltip-format": "kitty Terminal",
+    "on-click": "kitty"
+  },
+  "custom/files": {
+    "format": " ",
+    "tooltip-format": "Files",
+    "on-click": "thunar"
+  },
+  "group/app-launcher": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/files",
+      "custom/space",
+      "custom/kittens",
+    ]
+  },
+}

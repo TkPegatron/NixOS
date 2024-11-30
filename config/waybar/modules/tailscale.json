@@ -1,0 +1,9 @@
+{
+  "custom/tailscale": {
+    "exec": "/home/yanice/.local/bin/tailscale_status",
+    "interval": 2,
+    "tooltip": true,
+    "tooltip-format": "Tailscale status",
+    "on-click": "/home/yanice/.local/bin/tailscale_toggle"
+  },
+}

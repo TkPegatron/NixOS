@@ -1,0 +1,30 @@
+{
+  "pulseaudio": {
+    "format": "{icon}  ",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-source": " {volume}%",
+    "format-muted": " (MUTE)",
+    "format-icons": {
+      "headphones": "󰋋 ",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pypr toggle volume",
+    "on-click-right": "pamixer -t"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal" 
+  },
+  "group/sound": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider",
+    ]
+  },
+}

@@ -1,0 +1,17 @@
+{
+  "mpris": {
+    "format": "{status_icon}   {player_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {player_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "",
+      "mpd": " ",
+      "firefox": " ",
+      "mpv": " "
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    }
+  }
+}

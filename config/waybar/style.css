@@ -1,0 +1,88 @@
+/*@import '/home/nixos/.cache/wal/colors-waybar.css';*/
+@import 'style/clock.css';
+@import 'style/docker.css';
+@import 'style/hardware.css';
+@import 'style/jenkins.css';
+@import 'style/launcher.css';
+@import 'style/app-launcher.css';
+@import 'style/keyboard.css';
+@import 'style/pulseaudio.css';
+@import 'style/tray.css';
+@import 'style/vpn.css';
+@import 'style/weather.css';
+@import 'style/workspaces.css';
+
+* {
+  min-height: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+#waybar {
+	font-family: OpenDyslexic Nerd Font;
+	font-weight: bold;
+	color: @foreground;
+	font-size: 14px;
+	border: none;
+  border-radius: 8px;
+  border-color: @color1;
+}
+tooltip label {
+	padding: 3px 3px 3px 3px;
+	font-weight: bold;
+	color: @foreground;
+}
+tooltip {
+	padding: 10px 10px 10px 10px;
+  background-color: @background;
+	border: 1px solid;
+	border-radius: 8px;
+	color: @foreground;
+}
+
+window#waybar {
+  opacity: 0.88;
+  background-color: transparent;
+}
+
+#taskbar{
+	border-radius: 8px;
+	min-width: 10px;
+}
+.modules-left {
+	padding: 0px 25px 0px 25px;
+	color: @foreground;
+  background-color: @background;
+	border-radius: 8px;
+}
+.modules-right {
+	padding: 0px 5px 0px 5px;
+	color: @foreground;
+  background-color: @background;
+	border-radius: 8px;
+}
+.modules-center{
+	padding: 0px 15px 0px 15px;
+	color: @foreground;
+  background-color: @background;
+	border-radius: 8px;
+}
+window#waybar.bottom .modules-center {
+	padding: 5px 25px 5px 25px;
+	color: @foreground;
+  background-color: @background;
+}
+window#waybar.bottom .modules-center {
+	padding: 5px 25px 5px 25px;
+	color: @foreground;
+  background-color: @background;
+  opacity: 1;
+}
+window#waybar.bottom .modules-left {
+  background-color: transparent;
+  opacity: 0.88;
+}
+window#waybar.bottom .modules-right {
+  background-color: transparent;
+  opacity: 0.88;
+}

@@ -1,0 +1,22 @@
+{
+  "custom/dockericon": {
+    "format": "  ",
+    "tooltip-format": "Docker status",
+    "on-click": "kitty --hold -e docker ps"
+  },
+  "custom/dockerps": {
+    "exec": "/home/yanice/.config/waybar/docker.sh",
+    "interval": 2,
+    "tooltip": false,
+    "tooltip-format": "Docker status",
+    "on-click": "kitty --hold -e docker ps"
+  },
+  "group/docker": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/space",
+      "custom/dockericon",
+      "custom/dockerps",
+    ]
+  },
+}

@@ -1,0 +1,15 @@
+{
+  "custom/weathericon": {
+    "exec": "~/.local/bin/weather_icon.sh",
+    "tooltip": true,
+    "tooltip-format": "Weather in Ottawa: {}",
+    "on-click": "kitty --hold -e weather-Cli get Ottawa"
+  },
+  "custom/weather": {
+    "interval": 300,
+    "exec": "weather-Cli get Ottawa | grep Temperature: | head -n 1 | awk '{print $2}'",
+    "tooltip": true,
+    "tooltip-format": "Weather in Ottawa: {}",
+    "on-click": "kitty --hold -e weather-Cli get Ottawa"
+  },
+}

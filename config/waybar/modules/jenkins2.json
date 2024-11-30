@@ -1,0 +1,9 @@
+{
+  "custom/jenkins2": {
+    "tooltip": true,
+    "interval": 300,
+    "exec": "python /home/yanice/.local/bin/jenkins_results2.py",
+    "on-click": "xdg-open 'https://qa-jenkins.dku.sh/'",
+    "tooltip-format": "Jenkins2",
+  }
+}

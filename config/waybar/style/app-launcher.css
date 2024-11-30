@@ -1,0 +1,5 @@
+#app-launcher {
+	color: @foreground;
+	font-size: 20px;
+  min-width: 30px;
+}
