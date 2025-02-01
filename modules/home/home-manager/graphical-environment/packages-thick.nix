@@ -73,6 +73,7 @@
                     "workbench.colorTheme" = "Catppuccin Mocha";
                     "workbench.iconTheme" = "catppuccin-mocha";
                     "git.confirmSync" = false;
+                    "terminal.integrated.enableMultiLinePasteWarning" = false;
                 };
                 extensions = with pkgs.vscode-extensions; [
                     bbenoist.nix
@@ -93,14 +94,14 @@
 
             home.packages = with pkgs; [
                 virt-manager
-                flameshot
-        #        discord
-        #        openlens
-        #        krita
-        #        gimp
-        #        inkscape
-        #        meld
-        #        wireshark
+                #flameshot
+                #discord
+                #openlens
+                #krita
+                #gimp
+                #inkscape
+                #meld
+                #wireshark
             ];
         }
         #{ # Web Browser: Vivaldi

@@ -27,9 +27,13 @@
         localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
 
+    services.ivpn.enable = true;
+
     environment.systemPackages = with pkgs; [
       steamtinkerlaunch
       protonup-qt
+      ivpn
+      r2modman-upstream
       (lutris.override {
         extraLibraries =  pkgs: [
           # List library dependencies here

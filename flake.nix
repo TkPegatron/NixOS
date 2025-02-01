@@ -42,7 +42,7 @@
           # `nix build .#nixosConfigurations.toolbox.config.system.build.isoImage --show-trace`
           inherit inputs nixpkgs nixpkgs-unstable version;
           system = "x86_64-linux";
-          user = "nixos";
+          user = "toolbox";
           fullname = "NixOS";
           hardware.iso = true;
           desktop.hyperland = true;
@@ -74,6 +74,7 @@
           extra = {
             yubikey = true;
             tools = true;
+            bluetooth = true;
           };
           desktop = {
             plasma = true;
