@@ -14,7 +14,7 @@
 
 stdenv.mkDerivation rec {
   pname = "r2modman";
-  version = "3.1.48";
+  version = "3.1.54";
 
   src = fetchFromGitHub {
     owner = "ebkr";
