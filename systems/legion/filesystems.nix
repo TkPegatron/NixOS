@@ -7,6 +7,7 @@
     boot.initrd.luks.devices = {
         # Enciphered Boot Drive
         "legion-root".device = "/dev/disk/by-uuid/60b78745-8483-41c7-bfd8-7460cd15c5a8";
+        "legion-root".crypttabExtraOpts = ["fido2-device=auto"];
         # Enciphered Steam Library Drives
         "samsung870evo-s625nj0r276483w".device = "/dev/disk/by-uuid/4a158f14-9176-46dc-abcb-fe0a8185b243";
     };
