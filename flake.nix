@@ -20,34 +20,16 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-hardware, ... }:
     let
       nixosSystem = import ./lib/nixosConfig.nix;
       version = "24.05";
     in
     {
       nixosConfigurations = {
-        ephemera = nixosSystem "ephemera" {
-          # `nix build .#nixosConfigurations.ephemera.config.system.build.isoImage --show-trace`
-          inherit inputs nixpkgs nixpkgs-unstable version;
-          system = "x86_64-linux";
-          user = "nixos";
-          fullname = "NixOS";
-          hardware.iso = true;
-          hardware.guest = true;
-          desktop.hyperland = true;
-          extra.yubikey = true;
-        };
-        toolbox = nixosSystem "toolbox-nix" {
-          # `nix build .#nixosConfigurations.toolbox.config.system.build.isoImage --show-trace`
-          inherit inputs nixpkgs nixpkgs-unstable version;
-          system = "x86_64-linux";
-          user = "toolbox";
-          fullname = "NixOS";
-          hardware.iso = true;
-          desktop.hyperland = true;
-          extra.yubikey = true;
-        };
+        #
+        # Hardware Installations
+        #
         wintermute = nixosSystem "wintermute" {
           inherit inputs nixpkgs nixpkgs-unstable version;
           system = "x86_64-linux";
@@ -81,12 +63,36 @@
             thickpkgs = true;
           };
         };
-        tenfore = nixosSystem "tenfore" {
-          inherit inputs nixpkgs nixpkgs-unstable version;
+        htpc = nixosSystem "htpc" {
+          inherit inputs nixpkgs nixpkgs-unstable nixos-hardware version;
           system = "x86_64-linux";
           user = "elliana";
           fullname = "Elliana Perry";
+          desktop.gnome = true;
+        };
+        #
+        #  ISO images
+        #
+        ephemera = nixosSystem "ephemera" {
+          # `nix build .#nixosConfigurations.ephemera.config.system.build.isoImage --show-trace`
+          inherit inputs nixpkgs nixpkgs-unstable version;
+          system = "x86_64-linux";
+          user = "nixos";
+          fullname = "NixOS";
+          hardware.iso = true;
+          hardware.guest = true;
           desktop.hyperland = true;
+          extra.yubikey = true;
+        };
+        toolbox = nixosSystem "toolbox-nix" {
+          # `nix build .#nixosConfigurations.toolbox.config.system.build.isoImage --show-trace`
+          inherit inputs nixpkgs nixpkgs-unstable version;
+          system = "x86_64-linux";
+          user = "toolbox";
+          fullname = "NixOS";
+          hardware.iso = true;
+          desktop.hyperland = true;
+          extra.yubikey = true;
         };
       };
     };
