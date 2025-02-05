@@ -10,7 +10,7 @@
     boot.kernelParams = [ "snd_bcm2835.enable_hdmi=1" "snd_bcm2835.enable_headphones=1" ];
     boot.loader.raspberryPi.firmwareConfig = ''dtparam=audio=on'';
     boot.loader.generic-extlinux-compatible.enable = lib.mkForce true;
-    boot.loader.systemd-boot = lib.mkForce false;
+    boot.loader.systemd-boot.enable = lib.mkForce false;
 
     hardware = {
         enableRedistributableFirmware = true;
