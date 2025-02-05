@@ -3,19 +3,24 @@
         inputs.nixos-hardware.nixosModules.raspberry-pi-4
         ./filesystems.nix
     ];
+
+    nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+
     boot.plymouth.enable = true;
     boot.kernelParams = [ "snd_bcm2835.enable_hdmi=1" "snd_bcm2835.enable_headphones=1" ];
     boot.loader.raspberryPi.firmwareConfig = ''dtparam=audio=on'';
+    boot.loader.generic-extlinux-compatible.enable = lib.mkForce true;
+    boot.loader.systemd-boot = lib.mkForce false;
 
     hardware = {
         enableRedistributableFirmware = true;
         raspberry-pi."4" = {
             fkms-3d.enable = true;
             apply-overlays-dtmerge.enable = true;
-            deviceTree = {
-                enable = true;
-                filter = "*rpi-4-*.dtb";
-            };
+        };
+        deviceTree = {
+            enable = true;
+            filter = lib.mkForce "*rpi-4-*.dtb";
         };
     };
 
@@ -25,8 +30,4 @@
         libraspberrypi
         raspberrypi-eeprom
     ];
-
-    nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
-    boot.loader.generic-extlinux-compatible.enable = true;
-    system.stateVersion = "25.05";
 }

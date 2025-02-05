@@ -31,6 +31,7 @@
         # Hardware Installations
         #
         wintermute = nixosSystem "wintermute" {
+          # sudo nixos-install --root /mnt --flake .#wintermute
           inherit inputs nixpkgs nixpkgs-unstable version;
           system = "x86_64-linux";
           user = "elliana";
@@ -44,6 +45,7 @@
           };
         };
         legion = nixosSystem "legion" {
+          # sudo nixos-install --root /mnt --flake .#legion
           inherit inputs nixpkgs nixpkgs-unstable version;
           system = "x86_64-linux";
           user = "elliana";
@@ -64,8 +66,9 @@
           };
         };
         htpc = nixosSystem "htpc" {
+          # sudo nixos-install --root /mnt --flake .#htpc
           inherit inputs nixpkgs nixpkgs-unstable nixos-hardware version;
-          system = "x86_64-linux";
+          system = "aarch64-linux";
           user = "elliana";
           fullname = "Elliana Perry";
           desktop.gnome = true;
