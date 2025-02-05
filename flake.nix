@@ -67,7 +67,7 @@
         };
         htpc = nixosSystem "htpc" {
           # sudo nixos-install --root /mnt --flake .#htpc
-          inherit inputs nixpkgs nixpkgs-unstable nixos-hardware version;
+          inherit inputs nixpkgs nixpkgs-unstable version;
           system = "aarch64-linux";
           user = "elliana";
           fullname = "Elliana Perry";
