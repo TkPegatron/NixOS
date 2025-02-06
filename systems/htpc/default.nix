@@ -1,7 +1,8 @@
 { config, lib, inputs, pkgs, ... }: {
     imports = [
-        inputs.nixos-hardware.nixosModules.raspberry-pi-4
         ./filesystems.nix
+        inputs.nixos-hardware.nixosModules.raspberry-pi-4
+        ./kodi-media-center.nix
     ];
 
     nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
