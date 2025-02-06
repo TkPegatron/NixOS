@@ -25,7 +25,9 @@ in {
   users.users."${user.username}" = {
     isNormalUser = true;
     description = "${user.fullname}";
-    openssh.authorizedKeys.keys = [];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7DAHfg26u7UylYiF6PiM9hdbe4ejAfmjgq/Lpa0Nb+ cardno:22_730_621"
+    ];
     group = "${user.username}";
     hashedPassword = password;
     extraGroups = extraUserGroups ++ [

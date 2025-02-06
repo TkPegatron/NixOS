@@ -15,7 +15,7 @@
   environment.enableAllTerminfo = true;
   environment.etc = {
     "ssh/ssh_user_ca-zynthovian-xyz.pub" = {
-      text = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEmth45B8vaVPPJ6Ds4Y/t3tdfuiSmd7SkLwRGcORm3I ssh-user-ca@zynthovian.xyz";
+      text = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIELT32sxN9BC+TPDSibvf72B5RY56U97W3d7ksP7NsZM ssh-user-ca@zynthovian.xyz";
       mode = "0644";
     };
   };
