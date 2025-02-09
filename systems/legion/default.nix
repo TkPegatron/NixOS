@@ -4,6 +4,7 @@
         ./filesystems.nix
         ./syncthing.nix
         ./sshcerts.nix
+        ./moonlander.nix
     ];
 
     # Include AMD Microcode
@@ -64,6 +65,6 @@
     boot.plymouth = {
         enable = true;
         #themePackages = [self'.packages.catppuccin-plymouth];
-        #theme = "catppuccin-mocha";
+        #theme = "mocha";
     };
 }
